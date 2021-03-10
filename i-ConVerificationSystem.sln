@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i-ConVerificationSystem", "i-ConVerificationSystem.csproj", "{7FC69432-C562-40A4-85FB-EA870F6E62DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FC69432-C562-40A4-85FB-EA870F6E62DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FC69432-C562-40A4-85FB-EA870F6E62DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FC69432-C562-40A4-85FB-EA870F6E62DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FC69432-C562-40A4-85FB-EA870F6E62DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6D6F584-915F-4D49-922D-D3CB1B93B050}
+	EndGlobalSection
+EndGlobal

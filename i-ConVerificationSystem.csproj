@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FC69432-C562-40A4-85FB-EA870F6E62DE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>i_ConVerificationSystem</RootNamespace>
+    <AssemblyName>i-ConVerificationSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="ReactiveProperty, Version=7.5.1.0, Culture=neutral, PublicKeyToken=910d1732782c71cb, processorArchitecture=MSIL">
+      <HintPath>packages\ReactiveProperty.7.5.1\lib\netstandard2.0\ReactiveProperty.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveProperty.Core, Version=7.5.1.0, Culture=neutral, PublicKeyToken=910d1732782c71cb, processorArchitecture=MSIL">
+      <HintPath>packages\ReactiveProperty.Core.7.5.1\lib\netstandard2.0\ReactiveProperty.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Reactive, Version=4.4.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.4.4.1\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Const\GeometricStructureConst.cs" />
+    <Compile Include="Extensions\EnumExtension\EnumSourceProvider.cs" />
+    <Compile Include="Forms\Base\DataGridHeaderThumbBehavior.cs" />
+    <Compile Include="Forms\Base\DataGridSelectAllStyleBehavior.cs" />
+    <Compile Include="Forms\Base\HorizontalScrollSyncBehavior.cs" />
+    <Compile Include="Forms\Base\LandXMLStdInformation.xaml.cs">
+      <DependentUpon>LandXMLStdInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Base\MenuItemKeyBinded.cs" />
+    <Compile Include="Forms\Gradient\GGInputParameter.xaml.cs">
+      <DependentUpon>GGInputParameter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Gradient\GGVerificationResult.xaml.cs">
+      <DependentUpon>GGVerificationResult.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Gradient\OGInputParameter.xaml.cs">
+      <DependentUpon>OGInputParameter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Gradient\OGMap.xaml.cs">
+      <DependentUpon>OGMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Gradient\OGVerificationResult.xaml.cs">
+      <DependentUpon>OGVerificationResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Gradient\TGInputParameter.xaml.cs">
+      <DependentUpon>TGInputParameter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Gradient\TGVerificationResult.xaml.cs">
+      <DependentUpon>TGVerificationResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\OGVRTabs.xaml.cs">
+      <DependentUpon>OGVRTabs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\TGVRTabs.xaml.cs">
+      <DependentUpon>TGVRTabs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\WCVRListView.xaml.cs">
+      <DependentUpon>WCVRListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\WCVRTabs.xaml.cs">
+      <DependentUpon>WCVRTabs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\WVRWindow.xaml.cs">
+      <DependentUpon>WVRWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plot\PlainPlot.xaml.cs">
+      <DependentUpon>PlainPlot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plot\PlotView.cs" />
+    <Compile Include="Forms\Plot\TransversePlot.xaml.cs">
+      <DependentUpon>TransversePlot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Print\PrintForm.xaml.cs">
+      <DependentUpon>PrintForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\Base\TabItem_Extensions.cs" />
+    <Compile Include="Forms\Settings\StdWidthComposition\AlignmentsTabPages.xaml.cs">
+      <DependentUpon>AlignmentsTabPages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Print\PrintClass.cs" />
+    <Compile Include="Forms\Print\ReportControl3.xaml.cs">
+      <DependentUpon>ReportControl3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Print\ReportControl2.xaml.cs">
+      <DependentUpon>ReportControl2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Print\ReportControl1.xaml.cs">
+      <DependentUpon>ReportControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\LinqExtension\EnumerableExtensions.cs" />
+    <Compile Include="Forms\Settings\StdWidthComposition\StdWidthCompositionWindow.xaml.cs">
+      <DependentUpon>StdWidthCompositionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\StdWidthComposition\OGMapListView.xaml.cs">
+      <DependentUpon>OGMapListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\StdWidthComposition\PageCloseEventArgs.cs" />
+    <Compile Include="Forms\Settings\StdWidthComposition\StdAlignments.xaml.cs">
+      <DependentUpon>StdAlignments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\StdWidthComposition\StdTabControl.cs" />
+    <Compile Include="Forms\Settings\StdWidthComposition\StdTabItem.cs" />
+    <Compile Include="Forms\Settings\StdWidthComposition\StdTabs.xaml.cs">
+      <DependentUpon>StdTabs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\VerificationItem\GeneralSettingWindow.xaml.cs">
+      <DependentUpon>GeneralSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\VerificationItem\GGConditions.xaml.cs">
+      <DependentUpon>GGConditions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\VerificationItem\OGConditions.xaml.cs">
+      <DependentUpon>OGConditions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\VerificationItem\TGConditions.xaml.cs">
+      <DependentUpon>TGConditions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\VerificationItem\WCConditions.xaml.cs">
+      <DependentUpon>WCConditions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WidthComposition\WCInputParameter.xaml.cs">
+      <DependentUpon>WCInputParameter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WidthComposition\WCVerificationResult.xaml.cs">
+      <DependentUpon>WCVerificationResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WidthComposition\WVerificationResult.xaml.cs">
+      <DependentUpon>WVerificationResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JSON\JsonParser.cs" />
+    <Compile Include="JSON\AppSettingsManager.cs" />
+    <Compile Include="JSON\MessageMasterManager.cs" />
+    <Compile Include="JSON\StdVerificationConditionsManager.cs" />
+    <Compile Include="MainWindowModel.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Structs\GGVerificationResultItem.cs" />
+    <Compile Include="Structs\JSON\AppSettings.cs" />
+    <Compile Include="Structs\JSON\MessageMaster.cs" />
+    <Compile Include="Structs\JSON\StdVerificationConditions.cs" />
+    <Compile Include="Structs\LandXML\CrossSects.cs" />
+    <Compile Include="Structs\LandXML\Curve.cs" />
+    <Compile Include="Structs\LandXML\Line.cs" />
+    <Compile Include="Structs\LandXML\SlopeList.cs" />
+    <Compile Include="Structs\LandXML\Spiral.cs" />
+    <Compile Include="Structs\LandXML\Superelevation.cs" />
+    <Compile Include="Structs\OGExtensions.cs" />
+    <Compile Include="Structs\OGVerificationResultItem.cs" />
+    <Compile Include="Structs\OnesidedGradientVerificationResult.cs" />
+    <Compile Include="Structs\TGVerificationResultItem.cs" />
+    <Compile Include="Structs\VerificationResult.cs" />
+    <Compile Include="Structs\WCVerificationResultItem.cs" />
+    <Compile Include="Structs\WVerificationResultItem.cs" />
+    <Compile Include="Verification\CommonMethod.cs" />
+    <Compile Include="Verification\GentleSlope.cs" />
+    <Compile Include="Verification\OnesidedGradient.cs" />
+    <Compile Include="Verification\SlopeListClass.cs" />
+    <Compile Include="Verification\TransverseGradient.cs" />
+    <Compile Include="Verification\WidthComposition.cs" />
+    <Compile Include="XML\XMLLoader.cs" />
+    <Page Include="Forms\Base\LandXMLStdInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Gradient\GGInputParameter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Gradient\GGVerificationResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Forms\Gradient\OGInputParameter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Gradient\OGMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Gradient\OGVerificationResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Gradient\TGInputParameter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Gradient\TGVerificationResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Main\OGVRTabs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Main\TGVRTabs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Main\WCVRListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Main\WCVRTabs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Main\WVRWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Plot\PlainPlot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Plot\TransversePlot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Print\PrintForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Settings\StdWidthComposition\AlignmentsTabPages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Print\ReportControl3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Print\ReportControl2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Print\ReportControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Settings\StdWidthComposition\StdWidthCompositionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Settings\StdWidthComposition\OGMapListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Settings\StdWidthComposition\StdAlignments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Settings\StdWidthComposition\StdTabs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Settings\VerificationItem\GeneralSettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Settings\VerificationItem\GGConditions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Settings\VerificationItem\OGConditions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Settings\VerificationItem\TGConditions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Settings\VerificationItem\WCConditions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\WidthComposition\WCInputParameter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\WidthComposition\WCVerificationResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\WidthComposition\WVerificationResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Plot\AbstractMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Plot\AbstractMap.Designer.cs">
+      <DependentUpon>AbstractMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plot\WCPicture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Plot\WCPicture.Designer.cs">
+      <DependentUpon>WCPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Forms\Plot\AbstractMap.resx">
+      <DependentUpon>AbstractMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plot\WCPicture.resx">
+      <DependentUpon>WCPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include=".gitignore" />
+    <None Include="Documents\ファイル定義書.md" />
+    <None Include="Documents\補足資料.md" />
+    <None Include="Documents\片勾配すりつけの照査.md" />
+    <None Include="Documents\横断勾配の照査.md" />
+    <None Include="Documents\幅員の照査.md" />
+    <None Include="Documents\幅員構成の照査.md" />
+    <None Include="Documents\Template.md" />
+    <None Include="Documents\緩勾配区間長の照査.md" />
+    <None Include="Documents\表紙.md" />
+    <None Include="J-LandXML-Schema.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MessageMaster.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="README.md" />
+    <None Include="StdConditions\基準値1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Intersection.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

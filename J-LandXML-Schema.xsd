@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.landxml.org/schema/LandXML-1.2" targetNamespace="http://www.landxml.org/schema/LandXML-1.2"
+version="1.2">
+	<xs:element name="LandXML">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="Project" minOccurs="0"/>
+				<xs:element ref="Application" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CoordinateSystem" minOccurs="0"/>
+				<xs:element ref="Units"/>
+				<xs:element ref="CgPoints" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Alignments" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Roadways" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Surfaces" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" processContents="skip" minOccurs="0"/>
+			</xs:choice>
+			<xs:attribute name="date" type="xs:date" use="required"/>
+			<xs:attribute name="time" type="xs:time" use="required"/>
+			<xs:attribute name="version" type="xs:string" use="required"/>
+			<xs:attribute name="language" type="xs:string"/>
+			<xs:attribute name="readOnly" type="xs:boolean"/>
+			<xs:attribute name="LandXMLId" type="xs:int"/>
+			<xs:attribute name="crc" type="xs:integer"/>
+		</xs:complexType>
+		<xs:unique name="uCgPointsName">
+			<xs:selector xpath="CgPoints"/>
+			<xs:field xpath="@name"/>
+		</xs:unique>
+		<xs:unique name="uRoadwayName">
+			<xs:selector xpath="Roadways/Roadway"/>
+			<xs:field xpath="@name"/>
+		</xs:unique>
+	</xs:element>
+	<xs:simpleType name="angle">
+		<xs:annotation>
+			<xs:documentation>Represents a normalized angular value in the specified Angular units. Assume 0 degrees = east</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="station">
+		<xs:annotation>
+			<xs:documentation>
+				Represents the actual measured distance along the geometry in numeric decimal form expressed in linear units. Also known as the internal station value where no station
+				equations are applied.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="pointNameRef">
+		<xs:annotation>
+			<xs:documentation>
+				A reference name value referring to a PointType derived name attribute. An attribute if this type contains the value of a PointType derived element "name" attribute that exists
+				elsewhere the instance data.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="alignmentNameRefs">
+		<xs:annotation>
+			<xs:documentation>A list of reference names values refering to one or more Alignment.name attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="featureNameRef">
+		<xs:annotation>
+			<xs:documentation>A Feature element name attribute reference value refering to one Feature.name attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="clockwise">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cw"/>
+			<xs:enumeration value="ccw"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="metArea">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="hectare"/>
+			<xs:enumeration value="squareMeter"/>
+			<xs:enumeration value="squareMillimeter"/>
+			<xs:enumeration value="squareCentimeter"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="metLinear">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="millimeter"/>
+			<xs:enumeration value="centimeter"/>
+			<xs:enumeration value="meter"/>
+			<xs:enumeration value="kilometer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="metPressure">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HPA"/>
+			<xs:enumeration value="milliBars"/>
+			<xs:enumeration value="mmHG"/>
+			<xs:enumeration value="millimeterHG"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="metTemperature">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="celsius"/>
+			<xs:enumeration value="kelvin"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="metVolume">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cubicMeter"/>
+			<xs:enumeration value="liter"/>
+			<xs:enumeration value="hectareMeter"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="spiralType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="biquadratic"/>
+			<xs:enumeration value="bloss"/>
+			<xs:enumeration value="clothoid"/>
+			<xs:enumeration value="cosine"/>
+			<xs:enumeration value="cubic"/>
+			<xs:enumeration value="sinusoid"/>
+			<xs:enumeration value="revBiquadratic"/>
+			<xs:enumeration value="revBloss"/>
+			<xs:enumeration value="revCosine"/>
+			<xs:enumeration value="revSinusoid"/>
+			<xs:enumeration value="sineHalfWave"/>
+			<xs:enumeration value="biquadraticParabola"/>
+			<xs:enumeration value="cubicParabola"/>
+			<xs:enumeration value="japaneseCubic"/>
+			<xs:enumeration value="radioid"/>
+			<xs:enumeration value="weinerBogen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="stateType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="abandoned"/>
+			<xs:enumeration value="destroyed"/>
+			<xs:enumeration value="existing"/>
+			<xs:enumeration value="proposed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dataFormatType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Offset Elevation"/>
+			<xs:enumeration value="Slope Distance"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Point">
+		<xs:annotation>
+			<xs:documentation>
+				A text value that is a space delimited list of doubles. It is used as the base type to define point coordinates in the form of "northing easting" or "northing easting elevation" as
+				well as point lists of 2D or 3D points with items such as surface boundaries or "station elevation", "station offset" lists for items such as profiles and cross sections:
+				Example, "1632.546 2391.045 240.30"
+			</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="Point3dOpt">
+		<xs:restriction base="Point">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Point2dReq">
+		<xs:restriction base="Point">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="direction">
+		<xs:annotation>
+			<xs:documentation>Represents a normalized angular value that indicates a horizontal direction, expressed in the specified Direction units. Assume 0 degrees = north </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:complexType name="PointType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>
+				All elements derived from PointType will either contain a coordinate text value ( "north east" or "north east elev"), a "pntRef" attribute value, or both. The "pntRef" attribute
+				contains the value of a PointType derived element "name" attribute that exists elsewhere the instance data. If this element has a "pntRef" value, then it's coordinates will be retrieved from the referenced
+				element. If an element contains both a coordinate value and a pntRef, the coordinate value should be used as the point location and the referenced point is either ignored or is used for point attributes such
+				as number or desc.
+			</xs:documentation>
+			<xs:documentation>
+				The featureRef attribute points to a specific named Feature element that contains feature data related to the point.
+				The suggested form is to refer to a feature element within the same CgPoints group or parent element of the point element.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Point3dOpt">
+				<xs:attribute name="name" type="xs:string"/>
+				<xs:attribute name="desc" type="xs:string"/>
+				<xs:attribute name="code" type="xs:string"/>
+				<xs:attribute name="state" type="stateType"/>
+				<xs:attribute name="featureRef" type="featureNameRef" use="optional"/>
+				<xs:attribute name="timeStamp" type="xs:dateTime" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="CgPoints">
+		<xs:annotation>
+			<xs:documentation>座標点セット</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CgPoint" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- Allow nested CgPoints collections -->
+			</xs:sequence>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+		</xs:complexType>
+		<xs:unique name="uPntName">
+			<xs:selector xpath="CgPoint"/>
+			<xs:field xpath="@name"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="CgPoint">
+		<xs:annotation>
+			<xs:documentation>座標点</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:simpleContent>
+				<xs:extension base="PointType"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Property">
+		<xs:annotation>
+			<xs:documentation>プロパティ</xs:documentation>
+			<xs:documentation>The "label" attribute defines the name of the value held in the "value" attribute.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="label" use="required"/>
+			<xs:attribute name="value" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Feature">
+		<xs:annotation>
+			<xs:documentation>フィーチャ</xs:documentation>
+			<xs:documentation>Each Property element defines one piece of data.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PntList2D">
+		<xs:annotation>
+			<xs:documentation>2 次元座標リスト</xs:documentation>
+			<xs:documentation>It is primarily used for ProfileSurf to hold the list of station/elevations and CrossSectSurf for offset/elevation. </xs:documentation>
+			<xs:documentation>Example: "0.000 86.52 6.267 86.89 12.413 87.01 26.020 87.83" </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="Point">
+				<xs:minLength value="2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Start" type="PointType">
+		<xs:annotation>
+			<xs:documentation>開始点</xs:documentation>
+			<xs:documentation>Defined by either a coordinate text value ("north east" or "north east elev") or a CgPoint number reference "pntRef" attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="End" type="PointType">
+		<xs:annotation>
+			<xs:documentation>終了点</xs:documentation>
+			<xs:documentation>Defined by either a coordinate text value ("north east" or "north east elev") or a CgPoint number reference "pntRef" attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Center" type="PointType">
+		<xs:annotation>
+			<xs:documentation>中心点</xs:documentation>
+			<xs:documentation>Defined by either a coordinate text value ("north east" or "north east elev") or a CgPoint number reference "pntRef" attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PI" type="PointType">
+		<xs:annotation>
+			<xs:documentation>交点</xs:documentation>
+			<xs:documentation>Defined by either a coordinate text value ("north east" or "north east elev") or a CgPoint number reference "pntRef" attribute.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Curve">
+		<xs:annotation>
+			<xs:documentation>円曲線</xs:documentation>
+			<xs:documentation>The rotation attribute "rot" defines whether the arc travels clockwise or counter-clockwise from the Start to End point.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="3" maxOccurs="unbounded">
+				<xs:element ref="Start"/>
+				<xs:element ref="Center"/>
+				<xs:element ref="End"/>
+				<xs:element ref="PI" minOccurs="0"/>
+			</xs:choice>
+			<xs:attribute name="rot" type="clockwise" use="required"/>
+			<xs:attribute name="crvType" type="curveType"/>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="dirEnd" type="direction"/>
+			<xs:attribute name="dirStart" type="direction"/>
+			<xs:attribute name="staStart" type="xs:double"/>
+			<xs:attribute name="length" type="xs:double"/>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="radius" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Spiral">
+		<xs:annotation>
+			<xs:documentation>緩和曲線</xs:documentation>
+			<xs:documentation>This conforms to XML Schema which defines infinity as "INF" or "-INF" for all numeric datatypes </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="3" maxOccurs="3">
+					<xs:element ref="Start"/>
+					<xs:element ref="PI"/>
+					<xs:element ref="End"/>
+				</xs:choice>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="length" type="xs:double" use="required"/>
+			<xs:attribute name="radiusEnd" type="xs:double" use="required"/>
+			<xs:attribute name="radiusStart" type="xs:double" use="required"/>
+			<xs:attribute name="rot" type="clockwise" use="required"/>
+			<xs:attribute name="spiType" type="spiralType" use="required"/>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="dirEnd" type="direction"/>
+			<xs:attribute name="dirStart" type="direction"/>
+			<xs:attribute name="staStart" type="xs:double"/>
+			<xs:attribute name="name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CoordGeom">
+		<xs:annotation>
+			<xs:documentation>幾何要素</xs:documentation>
+			<xs:documentation>
+				After the sequential list of elements an optional vertical geometry
+				may be defined as a profile, which may be as simple as a list of PVIs (point to point 3D line string).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Line" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Curve" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Spiral" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Line">
+		<xs:annotation>
+			<xs:documentation>直線</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Start"/>
+				<xs:element ref="End"/>
+			</xs:sequence>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="dir" type="direction"/>
+			<xs:attribute name="length" type="xs:double"/>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="staStart" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrossSects">
+		<xs:annotation>
+			<xs:documentation>横断形状セット</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CrossSect" maxOccurs="unbounded"/>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+		</xs:complexType>
+		<xs:unique name="uCrossSectSta">
+			<xs:selector xpath="CrossSect"/>
+			<xs:field xpath="@sta"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="CrossSect">
+		<xs:annotation>
+			<xs:documentation>横断面</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CrossSectSurf" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="DesignCrossSectSurf" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="sta" type="xs:double" use="required"/>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="angleSkew" type="angle"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrossSectSurf">
+		<xs:annotation>
+			<xs:documentation>地形情報</xs:documentation>
+			<xs:documentation>Example: "-60.00 1.52 -36.26 0.89 12.41 2.01 60.00 1.83"</xs:documentation>
+			<xs:documentation>Note: Gaps in the surface are handled by having 2 or more PntList2D elements.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PntList2D" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CrossSectPnt">
+		<xs:annotation>
+			<xs:documentation>構成点</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:simpleContent>
+				<xs:extension base="PointType">
+					<xs:attribute name="dataFormat" type="dataFormatType" default="Offset Elevation"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DesignCrossSectSurf">
+		<xs:annotation>
+			<xs:documentation>構築形状</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CrossSectPnt" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="side" type="sideofRoadType"/>
+			<xs:attribute name="material" type="xs:string"/>
+			<xs:attribute name="closedArea" type="xs:boolean"/>
+			<xs:attribute name="typicalThickness" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="sideofRoadType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="right"/>
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="both"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="adverseSEType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="non-adverse"/>
+			<xs:enumeration value="adverse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Project">
+		<xs:annotation>
+			<xs:documentation>プロジェクト情報</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="desc" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Units">
+		<xs:annotation>
+			<xs:documentation>単位系</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="Metric"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Metric">
+		<xs:annotation>
+			<xs:documentation>メートル法</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="areaUnit" type="metArea" use="required"/>
+			<xs:attribute name="linearUnit" type="metLinear" use="required"/>
+			<xs:attribute name="volumeUnit" type="metVolume" use="required"/>
+			<xs:attribute name="temperatureUnit" type="metTemperature" use="required"/>
+			<xs:attribute name="pressureUnit" type="metPressure" use="required"/>
+			<xs:attribute name="angularUnit" type="angularType" default="radians"/>
+			<xs:attribute name="directionUnit" type="angularType" default="radians"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- Anglular Units element definition-->
+	<xs:simpleType name="angularType">
+		<xs:annotation>
+			<xs:documentation>
+				angular values expressed in "decimal dd.mm.ss" units have the numeric
+				format "45.3025" representing 45 degrees 30 minutes and 25 seconds. Both the minutes and seconds must be two characters with a numeric range between 00 to 60.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="radians"/>
+			<xs:enumeration value="grads"/>
+			<xs:enumeration value="decimal degrees"/>
+			<xs:enumeration value="decimal dd.mm.ss"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="CoordinateSystem">
+		<xs:annotation>
+			<xs:documentation>座標参照系</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="horizontalDatum" type="xs:string"/>
+			<xs:attribute name="verticalDatum" type="xs:string"/>
+			<xs:attribute name="horizontalCoordinateSystemName" type="xs:string"/>
+			<!-- The attributes below are provided for backward compatibility only and should no longer be used. -->
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Application">
+		<xs:annotation>
+			<xs:documentation>アプリケーション情報</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element ref="Author" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="manufacturer" type="xs:string"/>
+			<xs:attribute name="version" type="xs:string"/>
+			<xs:attribute name="manufacturerURL" type="xs:string"/>
+			<xs:attribute name="timeStamp" type="xs:dateTime" use="optional"/>
+			<xs:anyAttribute/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Author">
+		<xs:annotation>
+			<xs:documentation>作成者情報</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:attribute name="createdBy" type="xs:string"/>
+			<xs:attribute name="company" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Alignments">
+		<xs:annotation>
+			<xs:documentation>中心線形セット</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Alignment" maxOccurs="unbounded"/>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="state" type="stateType"/>
+		</xs:complexType>
+		<xs:unique name="uAlnName">
+			<xs:selector xpath="Alignment"/>
+			<xs:field xpath="@name"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="Alignment">
+		<xs:annotation>
+			<xs:documentation>中心線形</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element ref="Start" minOccurs="0"/>
+					<xs:element ref="CoordGeom"/>
+					<xs:element ref="AlignPIs" minOccurs="0"/>
+				</xs:choice>
+				<xs:element ref="StaEquation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Profile" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CrossSects" minOccurs="0"/>
+				<xs:element ref="Superelevation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="length" type="xs:double" use="required"/>
+			<xs:attribute name="staStart" type="xs:double" use="required"/>
+			<xs:attribute name="desc" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StaEquation">
+		<xs:annotation>
+			<xs:documentation>測点定義</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="staAhead" type="xs:double" use="required"/>
+			<xs:attribute name="staBack" type="xs:double"/>
+			<xs:attribute name="staInternal" type="xs:double" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Profile">
+		<xs:annotation>
+			<xs:documentation>縦断形状</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="ProfAlign" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ProfSurf" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="staStart" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProfSurf">
+		<xs:annotation>
+			<xs:documentation>縦断地盤線</xs:documentation>
+			<xs:documentation>It is defined with a space delimited PntList2D of station/elevations pairs. </xs:documentation>
+			<xs:documentation>Example: "0.000 86.52 6.267 86.89 12.413 87.01 26.020 87.83" </xs:documentation>
+			<xs:documentation>Note: Gaps in the profile are handled by having 2 or more PntList2D elements.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PntList2D" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="desc" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProfAlign">
+		<xs:annotation>
+			<xs:documentation>縦断線形</xs:documentation>
+			<xs:documentation>It is defined by a sequential series of any combination of the four "PVI" element types.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="PVI" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ParaCurve" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="desc" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PVI">
+		<xs:annotation>
+			<xs:documentation>縦断勾配変移点</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:simpleContent>
+				<xs:extension base="Point2dReq"/>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ParaCurve">
+		<xs:annotation>
+			<xs:documentation>縦断曲線</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:simpleContent>
+				<xs:extension base="Point2dReq">
+					<xs:attribute name="length" type="xs:double" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="speed">
+		<xs:annotation>
+			<xs:documentation>This item is the speed or velocity of travel. The unit of measure for this item is kilometers/hour for Metric units and miles/hour for Imperial. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:element name="Roadways">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="Roadway" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Roadway">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Speeds" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="alignmentRefs" type="alignmentNameRefs" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DesignSpeed">
+		<xs:annotation>
+			<xs:documentation>設計速度</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="speed" type="speed"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Speeds">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="DesignSpeed" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BeginRunoutSta" type="station" nillable="true">
+		<xs:annotation>
+			<xs:documentation>片勾配すりつけ区間の開始</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BeginRunoffSta" type="station" nillable="true">
+		<xs:annotation>
+			<xs:documentation>直線勾配から曲線勾配への移行区間</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FullSuperSta" type="station">
+		<xs:annotation>
+			<xs:documentation>曲線内最大勾配区間の開始</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FullSuperelev" type="slope">
+		<xs:annotation>
+			<xs:documentation>曲線内最大勾配</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RunoffSta" type="station" nillable="true">
+		<xs:annotation>
+			<xs:documentation>曲線内最大片勾配区間の終了</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="StartofRunoutSta" type="station" nillable="true">
+		<xs:annotation>
+			<xs:documentation>曲線勾配から直線勾配への移行区間</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EndofRunoutSta" type="station" nillable="true">
+		<xs:annotation>
+			<xs:documentation>片勾配すりつけ区間の終了</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AdverseSE" type="adverseSEType">
+		<xs:annotation>
+			<xs:documentation>待ち勾配区間の有無</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Superelevation">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="BeginRunoutSta" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="BeginRunoffSta" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="FullSuperSta" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="FullSuperelev" maxOccurs="unbounded"/>
+				<xs:element ref="RunoffSta" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="StartofRunoutSta" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="EndofRunoutSta" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="AdverseSE" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="staStart" type="station"/>
+			<xs:attribute name="staEnd" type="station"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="slope">
+		<xs:annotation>
+			<xs:documentation>This item is the slope. Unit of measure for this item is PERCENT %.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:element name="AlignPI">
+		<xs:annotation>
+			<xs:documentation>IP 点</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="PI"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AlignPIs">
+		<xs:annotation>
+			<xs:documentation>IP 点リスト</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="2" maxOccurs="unbounded">
+				<xs:element ref="AlignPI"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="surfTypeEnum">
+		<xs:annotation>
+			<xs:documentation>TIN is the acronym for "triangulated irregular network", a surface comprised of 3 point faces</xs:documentation>
+			<xs:documentation>grid is a surface comprised of 4 point faces.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TIN"/>
+			<xs:enumeration value="grid"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Surfaces">
+		<xs:annotation>
+			<xs:documentation>サーフェスセット</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Surface" maxOccurs="unbounded"/>
+				<xs:element ref="Feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="desc" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+		</xs:complexType>
+		<xs:unique name="uSrfName">
+			<xs:selector xpath="Surface"/>
+			<xs:field xpath="@name"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="Surface">
+		<xs:annotation>
+			<xs:documentation>要素種別サーフェス</xs:documentation>
+			<xs:documentation>Definition is a collection of points and faces that define the surface.</xs:documentation>
+			<xs:documentation>Watersheds is a collection the watershed boundaries for the surface.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Definition"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="desc" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Definition">
+		<xs:annotation>
+			<xs:documentation>サーフェス定義</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Pnts"/>
+				<xs:element ref="Faces" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="surfType" type="surfTypeEnum" use="required"/>
+			<xs:attribute name="area2DSurf" type="xs:double"/>
+			<xs:attribute name="area3DSurf" type="xs:double"/>
+			<xs:attribute name="elevMax" type="xs:double"/>
+			<xs:attribute name="elevMin" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pnts">
+		<xs:annotation>
+			<xs:documentation>点集合</xs:documentation>
+			<xs:documentation>The id values are referenced by the surface faces and breaklines.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="P" minOccurs="3" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="uSrfPntNum">
+			<xs:selector xpath="P"/>
+			<xs:field xpath="@id"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="P">
+		<xs:annotation>
+			<xs:documentation>点</xs:documentation>
+			<xs:documentation>The id values are referenced by the surface faces for the coordinate values.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:simpleContent>
+				<xs:extension base="PointType">
+					<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Faces">
+		<xs:annotation>
+			<xs:documentation>面集合</xs:documentation>
+			<xs:documentation>The faces are defined by either 3 (TIN) or 4 (grid) points, as indicated by the "surfType" attribute</xs:documentation>
+			<xs:documentation>For the north/east/elev values, each point of the face references a "P"point element point in the SurfPnts collection.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="F" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="FaceType">
+		<xs:list itemType="xs:integer"/>
+	</xs:simpleType>
+	<xs:simpleType name="curveType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="arc"/>
+			<xs:enumeration value="chord"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="F">
+		<xs:annotation>
+			<xs:documentation>面</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:simpleContent>
+				<xs:extension base="FaceType">
+					<xs:attribute name="i" type="xs:integer" use="optional"/>
+					<xs:attribute name="n" type="FaceType" use="optional"/>
+					<xs:attribute name="b" type="xs:positiveInteger" use="optional"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

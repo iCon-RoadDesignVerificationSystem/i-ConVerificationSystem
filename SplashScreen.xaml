@@ -1,0 +1,69 @@
+﻿<Window
+    x:Class="i_ConVerificationSystem.SplashScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SplashScreen"
+    Width="500"
+    Height="400"
+    AllowsTransparency="True"
+    Topmost="True"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard Name="FormFade">
+                    <DoubleAnimation
+                        Name="FormFadeAnimation"
+                        AutoReverse="True"
+                        Completed="FormFadeAnimation_Completed"
+                        RepeatBehavior="1x"
+                        Storyboard.TargetProperty="(Window.Opacity)"
+                        From="0.0"
+                        To="1.0"
+                        Duration="0:0:1.5">
+                        <DoubleAnimation.EasingFunction>
+                            <QuinticEase EasingMode="EaseOut" />
+                        </DoubleAnimation.EasingFunction>
+                    </DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="120" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="0"
+                FontFamily="Yu Gothic"
+                FontSize="30"
+                FontWeight="Bold"
+                Text="{Binding Title_.Value}"
+                TextWrapping="Wrap" />
+            <TextBlock
+                Grid.Row="1"
+                FontFamily="Yu Gothic"
+                FontSize="20"
+                Text="本システムは、東京大学大学院工学系研究科「i-Constructionシステム学」寄付講座および八千代エンジニヤリング株式会社の著作物です。ソースコードはMITライセンスの元で公開されています。"
+                TextWrapping="Wrap" />
+            <TextBlock
+                Grid.Row="2"
+                FontFamily="Yu Gothic"
+                FontSize="15"
+                Text="Copyright (c) 2021 The University of Tokyo, School of Engineering Construction System Management for Innovation &amp; Yachiyo Engineering Co., Ltd. All Rights Reserved.&#10;This softwear is released under the MIT License.&#10;see LICENSE.txt"
+                TextWrapping="Wrap" />
+        </Grid>
+    </Border>
+</Window>

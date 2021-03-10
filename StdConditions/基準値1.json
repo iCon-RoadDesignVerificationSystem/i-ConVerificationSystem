@@ -1,0 +1,3786 @@
+{
+  "STDValues": {
+    "-Source": "構造令",
+    "-Remarks": "構造令の基準値ファイル。",
+    "WC": {
+      "-Remarks": "幅員構成照査に使う基準値。",
+      "-PlannedTvRemarks": "車線数の判定に使用する設計基準交通量。4車線未満用",
+      "-Planned4TvRemakrs": "車線数の判定に使用する設計基準交通量。4車線以上用",
+      "PlannedTvRatio": 0.8,
+      "Planned4TvRatio": 0.6,
+      "PlannedTv": [
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-Topography": "Plain",
+          "-PlannedTv": 14000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-Topography": "Plain",
+          "-PlannedTv": 14000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 10000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-Topography": "Plain",
+          "-PlannedTv": 13000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 9000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-Topography": "Plain",
+          "-PlannedTv": 9000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-Topography": "Plain",
+          "-PlannedTv": 8000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 6000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-Topography": "Plain",
+          "-PlannedTv": 8000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 6000
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-Topography": "None",
+          "-PlannedTv": 12000
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-Topography": "None",
+          "-PlannedTv": 10000
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-Topography": "None",
+          "-PlannedTv": 9000
+        }
+      ],
+      "Planned4Tv": [
+        {
+          "-RoadType": 1,
+          "-RoadClass": 1,
+          "-Topography": "Plain",
+          "-PlannedTv": 12000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-Topography": "Plain",
+          "-PlannedTv": 12000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 9000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-Topography": "Plain",
+          "-PlannedTv": 11000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 8000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-Topography": "Plain",
+          "-PlannedTv": 11000
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 8000
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 1,
+          "-Topography": "None",
+          "-PlannedTv": 18000
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 2,
+          "-Topography": "None",
+          "-PlannedTv": 17000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 1,
+          "-Topography": "Plain",
+          "-PlannedTv": 11000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-Topography": "Plain",
+          "-PlannedTv": 9000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 7000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-Topography": "Plain",
+          "-PlannedTv": 8000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 6000
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-Topography": "Mountainous",
+          "-PlannedTv": 5000
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-Topography": "None",
+          "-PlannedTv": 12000
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-Topography": "None",
+          "-PlannedTv": 10000
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-Topography": "None",
+          "-PlannedTv": 10000
+        }
+      ]
+    },
+    "W": {
+      "-Remarks": "幅員照査に使う基準値。",
+      "-CarriagewayWidthRemarks": "車線幅員の基準値",
+      "-CenterMarginalWidthRemarks": "中央帯側帯幅員の基準値",
+      "-CenterSpritWidthRemarks": "中央分離帯幅員の基準値",
+      "-RoadShoulderWidthRemarks": "路肩幅員の基準値",
+      "-RoadShoulderS1WidthRemarks": "路肩（分離片側1車線の第1種道路）幅員の基準値",
+      "-RoadShoulderStripWidthRemarks": "路肩側帯の幅員",
+      "CarriagewayWidth": [
+        {
+          "-RoadType": 1,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "None",
+          "-STDVal1": 3.5,
+          "-SPCVal1": 3.75,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.5,
+          "-SPCVal1": 3.75,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 3.5,
+          "-SPCVal1": 3.25,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.5,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 3.25,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.25,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 3.0,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.5,
+          "-SPCVal1": 3.25,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 3.25,
+          "-SPCVal1": 3.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.25,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 3.0,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.5,
+          "-SPCVal1": 3.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [3.25, 3.0, 2.75],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 3.0,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [2.5, 2.25],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.25,
+          "-SPCVal1": 3.5,
+          "-STDVal2": 0.0,
+          "-STDVal3": [3.0, 2.75],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 2.75,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [2.5, 2.25],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.0,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [3.25, 2.75],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 2.75,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [2.5, 2.25],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "None",
+          "-STDVal1": 2.75,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [3.25, 3.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 5,
+          "-RoadSideStandard": "None",
+          "-STDVal1": 4.0,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [0.0],
+          "-SPCVal2": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.25,
+          "-SPCVal1": 3.5,
+          "-STDVal2": 3.0,
+          "-STDVal3": [2.75],
+          "-SPCVal2": 2.5
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 2.75,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [2.5, 2.25],
+          "-SPCVal2": 2.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.0,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 2.75,
+          "-STDVal3": [3.25],
+          "-SPCVal2": 2.5
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 2.75,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [2.5, 2.25],
+          "-SPCVal2": 2.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal1": 3.0,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 2.75,
+          "-STDVal3": [3.25],
+          "-SPCVal2": 2.5
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal1": 2.75,
+          "-SPCVal1": 0.0,
+          "-STDVal2": 0.0,
+          "-STDVal3": [2.5, 2.25],
+          "-SPCVal2": 2.0
+        }
+      ],
+      "CenterMarginalWidth": [
+        {
+          "-RoadType": 1,
+          "-RoadClass": 1,
+          "-STDVal": 0.75,
+          "-SPCVal": 0.25
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-STDVal": 0.75,
+          "-SPCVal": 0.25
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-STDVal": 0.5,
+          "-SPCVal": 0.25
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-STDVal": 0.5,
+          "-SPCVal": 0.25
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 1,
+          "-STDVal": 0.5,
+          "-SPCVal": 0.25
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 2,
+          "-STDVal": 0.5,
+          "-SPCVal": 0.25
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 1,
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        }
+      ],
+      "CenterSpritWidth": [
+        {
+          "-RoadType": 1,
+          "-RoadClass": 1,
+          "-STDVal": 3.0,
+          "-SPCVal": 1.5
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-STDVal": 3.0,
+          "-SPCVal": 1.5
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-STDVal": 2.0,
+          "-SPCVal": 1.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-STDVal": 2.0,
+          "-SPCVal": 1.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 1,
+          "-STDVal": 1.25,
+          "-SPCVal": 1.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 2,
+          "-STDVal": 0.75,
+          "-SPCVal": 0.75
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 1,
+          "-STDVal": 1.25,
+          "-SPCVal": 0.5
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-STDVal": 1.25,
+          "-SPCVal": 0.5
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-STDVal": 1.25,
+          "-SPCVal": 0.5
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-STDVal": 1.25,
+          "-SPCVal": 0.5
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-STDVal": 0.5,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-STDVal": 0.5,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-STDVal": 0.5,
+          "-SPCVal": 0.0
+        }
+      ],
+      "RoadShoulderWidth": [
+        {
+          "-RoadType": 1,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 2.5,
+          "-SPCValL": 1.75,
+          "-DESValL": 3.25,
+          "-STDValR": 1.25,
+          "-DESValR": 1.75,
+          "-TUNVal": 1.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 2.5,
+          "-SPCValL": 1.75,
+          "-DESValL": 3.25,
+          "-STDValR": 1.25,
+          "-DESValR": 1.75,
+          "-TUNVal": 1.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 1.75,
+          "-SPCValL": 1.25,
+          "-DESValL": 2.5,
+          "-STDValR": 0.75,
+          "-DESValR": 1.0,
+          "-TUNVal": 0.75
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 1.75,
+          "-SPCValL": 1.25,
+          "-DESValL": 1.75,
+          "-STDValR": 0.75,
+          "-DESValR": 1.0,
+          "-TUNVal": 0.75
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 1.25,
+          "-SPCValL": 0.0,
+          "-DESValL": 1.75,
+          "-STDValR": 0.75,
+          "-DESValR": 1.0,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 1.25,
+          "-SPCValL": 0.0,
+          "-DESValL": 1.75,
+          "-STDValR": 0.75,
+          "-DESValR": 0.75,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 1.25,
+          "-SPCValL": 0.75,
+          "-DESValL": 1.75,
+          "-STDValR": 0.5,
+          "-DESValR": 0.75,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 0.75,
+          "-SPCValL": 0.5,
+          "-DESValL": 1.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.75,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 0.75,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.75,
+          "-STDValR": 0.5,
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 0.75,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.75,
+          "-STDValR": 0.5,
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 5,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.5,
+          "-STDValR": 0.5,
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.5,
+          "-STDValR": 0.5,
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.5,
+          "-STDValR": 0.5,
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.5,
+          "-STDValR": 0.5,
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 1.25,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.75,
+          "-DESValR": 0.0,
+          "-TUNVal": 1.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 1.25,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.75,
+          "-DESValR": 0.0,
+          "-TUNVal": 1.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 1.0,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.75
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 1.0,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.75
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 0,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 1.0,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 0.75,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.5
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 5,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 0.5,
+          "-SPCValL": 0.0,
+          "-DESValL": 0.0,
+          "-STDValR": 0.5,
+          "-DESValR": 0.0,
+          "-TUNVal": 0.0
+        }
+      ],
+      "RoadShoulderS1Width": [
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 2.5,
+          "-SPCValL": 1.75,
+          "-STDValR": 1.25
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 2.5,
+          "-SPCValL": 1.75,
+          "-STDValR": 0.75
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDValL": 2.5,
+          "-SPCValL": 2.0,
+          "-STDValR": 0.75
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 1.25,
+          "-SPCValL": 0.0,
+          "-STDValR": 0.75
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 1.25,
+          "-SPCValL": 0.0,
+          "-STDValR": 0.5
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDValL": 1.25,
+          "-SPCValL": 0.0,
+          "-STDValR": 0.5
+        }
+      ],
+      "RoadShoulderStripWidth": [
+        {
+          "-RoadType": 1,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "SmallRoad",
+          "-STDVal": 0.25,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal": 0.75,
+          "-SPCVal": 0.5
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal": 0.75,
+          "-SPCVal": 0.5
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 3,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal": 0.5,
+          "-SPCVal": 0.25
+        },
+        {
+          "-RoadType": 1,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal": 0.5,
+          "-SPCVal": 0.25
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 1,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal": 0.5,
+          "-SPCVal": 0.0
+        },
+        {
+          "-RoadType": 2,
+          "-RoadClass": 2,
+          "-RoadSideStandard": "NormalRoad",
+          "-STDVal": 0.5,
+          "-SPCVal": 0.0
+        }
+      ]
+    },
+    "TG": {
+      "-StdNormalCrownRemarks": "直線部の横断勾配の標準値。{1.5M} -> 直線部の横断勾配が1.5%であればOK。それ以外はNG。{3.0M, 5.0M} -> 直線部の横断勾配が3.0%以上5.0%以下であればOK。それ以外はNG",
+      "-StdOnesidedGradientRemarks": "車道の片勾配の基準値参照表",
+      "-StdOnesidedGradientForType4Remarks": "車道の片勾配の基準値参照表（第4種道路用）",
+      "-StdStopOnesidedGradientRemarks": "片勾配を打ち切る曲線半径の基準値",
+      "-StdAppropriateGradientRemarks": "路肩折れの勾配",
+      "StdNormalCrown": [
+        {
+          "-IsOnesideOneLine": true,
+          "-RoadPavingType": "CeCoOrAsCoRoad",
+          "-STDCrown": [1.5]
+        },
+        {
+          "-IsOnesideOneLine": true,
+          "-RoadPavingType": "OtherType",
+          "-STDCrown": [3.0, 5.0]
+        },
+        {
+          "-IsOnesideOneLine": false,
+          "-RoadPavingType": "CeCoOrAsCoRoad",
+          "-STDCrown": [2.0]
+        },
+        {
+          "-IsOnesideOneLine": false,
+          "-RoadPavingType": "OtherType",
+          "-STDCrown": [3.0, 5.0]
+        }
+      ],
+      "StdOnesidedGradient": [
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 570,
+          "-MaxRadius": 610,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 610,
+          "-MaxRadius": 670,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 670,
+          "-MaxRadius": 760,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 760,
+          "-MaxRadius": 880,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 880,
+          "-MaxRadius": 1030,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 1030,
+          "-MaxRadius": 1280,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 1280,
+          "-MaxRadius": 1660,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 1660,
+          "-MaxRadius": 2300,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 2300,
+          "-MaxRadius": 2860,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-MinRadius": 2860,
+          "-MaxRadius": 5500,
+          "-CONVal1": 1.5,
+          "-CONVal2": 1.5,
+          "-CONVal3": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 380,
+          "-MaxRadius": 430,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 430,
+          "-MaxRadius": 480,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 480,
+          "-MaxRadius": 550,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 550,
+          "-MaxRadius": 640,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 640,
+          "-MaxRadius": 760,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 760,
+          "-MaxRadius": 930,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 730,
+          "-MaxRadius": 1210,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 1210,
+          "-MaxRadius": 1700,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 1700,
+          "-MaxRadius": 2130,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-MinRadius": 2130,
+          "-MaxRadius": 4000,
+          "-CONVal1": 1.5,
+          "-CONVal2": 1.5,
+          "-CONVal3": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 230,
+          "-MaxRadius": 280,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 280,
+          "-MaxRadius": 330,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 330,
+          "-MaxRadius": 380,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 380,
+          "-MaxRadius": 450,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 450,
+          "-MaxRadius": 540,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 540,
+          "-MaxRadius": 670,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 670,
+          "-MaxRadius": 870,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 870,
+          "-MaxRadius": 1240,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 1240,
+          "-MaxRadius": 2100,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-MinRadius": 2100,
+          "-MaxRadius": 2500,
+          "-CONVal1": 1.5,
+          "-CONVal2": 1.5,
+          "-CONVal3": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 120,
+          "-MaxRadius": 150,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 150,
+          "-MaxRadius": 190,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 190,
+          "-MaxRadius": 230,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 230,
+          "-MaxRadius": 270,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 270,
+          "-MaxRadius": 330,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 330,
+          "-MaxRadius": 420,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 420,
+          "-MaxRadius": 560,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 560,
+          "-MaxRadius": 800,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 800,
+          "-MaxRadius": 1370,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 1370,
+          "-MaxRadius": 1500,
+          "-CONVal1": 1.5,
+          "-CONVal2": 1.5,
+          "-CONVal3": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 100,
+          "-MaxRadius": 130,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 130,
+          "-MaxRadius": 160,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 160,
+          "-MaxRadius": 200,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 200,
+          "-MaxRadius": 240,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 240,
+          "-MaxRadius": 310,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 310,
+          "-MaxRadius": 410,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 410,
+          "-MaxRadius": 590,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 590,
+          "-MaxRadius": 1000,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 1.5,
+          "-CONVal2": 1.5,
+          "-CONVal3": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 50,
+          "-MaxRadius": 65,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 65,
+          "-MaxRadius": 80,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 100,
+          "-MaxRadius": 130,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 130,
+          "-MaxRadius": 160,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 160,
+          "-MaxRadius": 210,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 210,
+          "-MaxRadius": 280,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 280,
+          "-MaxRadius": 400,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 400,
+          "-MaxRadius": 600,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 1.5,
+          "-CONVal2": 1.5,
+          "-CONVal3": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 30,
+          "-MaxRadius": 40,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 40,
+          "-MaxRadius": 60,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 60,
+          "-MaxRadius": 80,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 80,
+          "-MaxRadius": 110,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 110,
+          "-MaxRadius": 150,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 150,
+          "-MaxRadius": 220,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 220,
+          "-MaxRadius": 350,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 1.5,
+          "-CONVal2": 1.5,
+          "-CONVal3": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 15,
+          "-MaxRadius": 20,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 20,
+          "-MaxRadius": 30,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 30,
+          "-MaxRadius": 40,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 40,
+          "-MaxRadius": 50,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 50,
+          "-MaxRadius": 70,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 70,
+          "-MaxRadius": 100,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 100,
+          "-MaxRadius": 150,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 1.5,
+          "-CONVal2": 1.5,
+          "-CONVal3": 1.5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 570,
+          "-MaxRadius": 610,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 610,
+          "-MaxRadius": 670,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 670,
+          "-MaxRadius": 760,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 760,
+          "-MaxRadius": 880,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 880,
+          "-MaxRadius": 1030,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 1030,
+          "-MaxRadius": 1280,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 1280,
+          "-MaxRadius": 1660,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 1660,
+          "-MaxRadius": 2300,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-MinRadius": 2300,
+          "-MaxRadius": 7500,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 380,
+          "-MaxRadius": 430,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 430,
+          "-MaxRadius": 480,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 480,
+          "-MaxRadius": 550,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 550,
+          "-MaxRadius": 640,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 640,
+          "-MaxRadius": 760,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 760,
+          "-MaxRadius": 930,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 730,
+          "-MaxRadius": 1210,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 1210,
+          "-MaxRadius": 1700,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-MinRadius": 1700,
+          "-MaxRadius": 5000,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 230,
+          "-MaxRadius": 280,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 280,
+          "-MaxRadius": 330,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 330,
+          "-MaxRadius": 380,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 380,
+          "-MaxRadius": 450,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 450,
+          "-MaxRadius": 540,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 540,
+          "-MaxRadius": 670,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 670,
+          "-MaxRadius": 870,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 870,
+          "-MaxRadius": 1240,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-MinRadius": 1240,
+          "-MaxRadius": 3500,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 120,
+          "-MaxRadius": 150,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 150,
+          "-MaxRadius": 190,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 190,
+          "-MaxRadius": 230,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 230,
+          "-MaxRadius": 270,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 270,
+          "-MaxRadius": 330,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 330,
+          "-MaxRadius": 420,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 420,
+          "-MaxRadius": 560,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 560,
+          "-MaxRadius": 800,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 800,
+          "-MaxRadius": 2000,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 100,
+          "-MaxRadius": 130,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 130,
+          "-MaxRadius": 160,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 160,
+          "-MaxRadius": 200,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 200,
+          "-MaxRadius": 240,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 240,
+          "-MaxRadius": 310,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 310,
+          "-MaxRadius": 410,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 410,
+          "-MaxRadius": 590,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 590,
+          "-MaxRadius": 1300,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 50,
+          "-MaxRadius": 65,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 65,
+          "-MaxRadius": 80,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 100,
+          "-MaxRadius": 130,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 130,
+          "-MaxRadius": 160,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 160,
+          "-MaxRadius": 210,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 210,
+          "-MaxRadius": 280,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 280,
+          "-MaxRadius": 400,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 400,
+          "-MaxRadius": 800,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 30,
+          "-MaxRadius": 40,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 40,
+          "-MaxRadius": 60,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 60,
+          "-MaxRadius": 80,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 80,
+          "-MaxRadius": 110,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 110,
+          "-MaxRadius": 150,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 150,
+          "-MaxRadius": 220,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 220,
+          "-MaxRadius": 500,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 15,
+          "-MaxRadius": 20,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 20,
+          "-MaxRadius": 30,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 30,
+          "-MaxRadius": 40,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 40,
+          "-MaxRadius": 50,
+          "-CONVal1": 5,
+          "-CONVal2": 5,
+          "-CONVal3": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 50,
+          "-MaxRadius": 70,
+          "-CONVal1": 4,
+          "-CONVal2": 4,
+          "-CONVal3": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 70,
+          "-MaxRadius": 100,
+          "-CONVal1": 3,
+          "-CONVal2": 3,
+          "-CONVal3": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 100,
+          "-MaxRadius": 200,
+          "-CONVal1": 2,
+          "-CONVal2": 2,
+          "-CONVal3": 2
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 60,
+          "-MinRadius": 120,
+          "-MaxRadius": 150,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 60,
+          "-MinRadius": 150,
+          "-MaxRadius": 190,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 60,
+          "-MinRadius": 190,
+          "-MaxRadius": 230,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 60,
+          "-MinRadius": 230,
+          "-MaxRadius": 240,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 50,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 50,
+          "-MinRadius": 100,
+          "-MaxRadius": 130,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 50,
+          "-MinRadius": 130,
+          "-MaxRadius": 160,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 50,
+          "-MinRadius": 160,
+          "-MaxRadius": 165,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 40,
+          "-MinRadius": 50,
+          "-MaxRadius": 65,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 40,
+          "-MinRadius": 65,
+          "-MaxRadius": 80,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 40,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 40,
+          "-MinRadius": 100,
+          "-MaxRadius": 105,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 30,
+          "-MinRadius": 30,
+          "-MaxRadius": 40,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 30,
+          "-MinRadius": 40,
+          "-MaxRadius": 60,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 20,
+          "-MinRadius": 15,
+          "-MaxRadius": 20,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 20,
+          "-MinRadius": 20,
+          "-MaxRadius": 25,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 60,
+          "-MinRadius": 120,
+          "-MaxRadius": 150,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 60,
+          "-MinRadius": 150,
+          "-MaxRadius": 190,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 60,
+          "-MinRadius": 190,
+          "-MaxRadius": 230,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 60,
+          "-MinRadius": 230,
+          "-MaxRadius": 260,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 50,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 50,
+          "-MinRadius": 100,
+          "-MaxRadius": 130,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 50,
+          "-MinRadius": 130,
+          "-MaxRadius": 160,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 50,
+          "-MinRadius": 160,
+          "-MaxRadius": 180,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 40,
+          "-MinRadius": 50,
+          "-MaxRadius": 65,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 40,
+          "-MinRadius": 65,
+          "-MaxRadius": 80,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 40,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 40,
+          "-MinRadius": 100,
+          "-MaxRadius": 115,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 30,
+          "-MinRadius": 30,
+          "-MaxRadius": 40,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 30,
+          "-MinRadius": 40,
+          "-MaxRadius": 65,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 20,
+          "-MinRadius": 15,
+          "-MaxRadius": 20,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 20,
+          "-MinRadius": 20,
+          "-MaxRadius": 30,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 120,
+          "-MaxRadius": 150,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 150,
+          "-MaxRadius": 190,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 190,
+          "-MaxRadius": 230,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 230,
+          "-MaxRadius": 270,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 270,
+          "-MaxRadius": 280,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 100,
+          "-MaxRadius": 130,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 130,
+          "-MaxRadius": 160,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 160,
+          "-MaxRadius": 200,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 50,
+          "-MaxRadius": 65,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 65,
+          "-MaxRadius": 80,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 80,
+          "-MaxRadius": 100,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 100,
+          "-MaxRadius": 125,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 30,
+          "-MaxRadius": 40,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 40,
+          "-MaxRadius": 60,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 60,
+          "-MaxRadius": 70,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 10,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 9,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 15,
+          "-MaxRadius": 20,
+          "-CONVal1": 8,
+          "-CONVal2": 6,
+          "-CONVal3": 8
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 20,
+          "-MaxRadius": 30,
+          "-CONVal1": 7,
+          "-CONVal2": 6,
+          "-CONVal3": 7
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-CONVal1": 6,
+          "-CONVal2": 6,
+          "-CONVal3": 6
+        }
+      ],
+      "StdStopOnesidedGradient": [
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 120,
+          "-STDVal": 5500,
+          "-SPCVal": 0
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 100,
+          "-STDVal": 4000,
+          "-SPCVal": 0
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 80,
+          "-STDVal": 2500,
+          "-SPCVal": 0
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-STDVal": 1500,
+          "-SPCVal": 220
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-STDVal": 1000,
+          "-SPCVal": 150
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-STDVal": 600,
+          "-SPCVal": 100
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-STDVal": 350,
+          "-SPCVal": 55
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-STDVal": 150,
+          "-SPCVal": 25
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 120,
+          "-STDVal": 7500,
+          "-SPCVal": 0
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 100,
+          "-STDVal": 5000,
+          "-SPCVal": 0
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 80,
+          "-STDVal": 3500,
+          "-SPCVal": 0
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-STDVal": 2000,
+          "-SPCVal": 220
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-STDVal": 1300,
+          "-SPCVal": 150
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-STDVal": 800,
+          "-SPCVal": 100
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-STDVal": 500,
+          "-SPCVal": 55
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-STDVal": 200,
+          "-SPCVal": 25
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 60,
+          "-STDVal": 240,
+          "-SPCVal": 240
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 50,
+          "-STDVal": 165,
+          "-SPCVal": 165
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 40,
+          "-STDVal": 105,
+          "-SPCVal": 105
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 30,
+          "-STDVal": 60,
+          "-SPCVal": 60
+        },
+        {
+          "-NormalCrown": 3,
+          "-DesignSpeed": 20,
+          "-STDVal": 25,
+          "-SPCVal": 25
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 60,
+          "-STDVal": 260,
+          "-SPCVal": 260
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 50,
+          "-STDVal": 180,
+          "-SPCVal": 180
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 40,
+          "-STDVal": 115,
+          "-SPCVal": 115
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 30,
+          "-STDVal": 65,
+          "-SPCVal": 65
+        },
+        {
+          "-NormalCrown": 4,
+          "-DesignSpeed": 20,
+          "-STDVal": 30,
+          "-SPCVal": 30
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 60,
+          "-STDVal": 280,
+          "-SPCVal": 280
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 50,
+          "-STDVal": 200,
+          "-SPCVal": 200
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 40,
+          "-STDVal": 125,
+          "-SPCVal": 125
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 30,
+          "-STDVal": 70,
+          "-SPCVal": 70
+        },
+        {
+          "-NormalCrown": 5,
+          "-DesignSpeed": 20,
+          "-STDVal": 30,
+          "-SPCVal": 30
+        }
+      ],
+      "StdOnesidedGradientForType4": [
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 150,
+          "-MaxRadius": 160,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 160,
+          "-MaxRadius": 165,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 165,
+          "-MaxRadius": 170,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 60,
+          "-MinRadius": 170,
+          "-MaxRadius": 220,
+          "-ConVal4": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 100,
+          "-MaxRadius": 105,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 105,
+          "-MaxRadius": 110,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 110,
+          "-MaxRadius": 115,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 115,
+          "-MaxRadius": 120,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 50,
+          "-MinRadius": 120,
+          "-MaxRadius": 150,
+          "-ConVal4": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 60,
+          "-MaxRadius": 63,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 63,
+          "-MaxRadius": 65,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 65,
+          "-MaxRadius": 70,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 70,
+          "-MaxRadius": 74,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 74,
+          "-MaxRadius": 76,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 40,
+          "-MinRadius": 76,
+          "-MaxRadius": 100,
+          "-ConVal4": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 30,
+          "-MaxRadius": 35,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 35,
+          "-MaxRadius": 37,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 37,
+          "-MaxRadius": 40,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 40,
+          "-MaxRadius": 42,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 42,
+          "-MaxRadius": 43,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 30,
+          "-MinRadius": 43,
+          "-MaxRadius": 55,
+          "-ConVal4": 1.5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 15,
+          "-MaxRadius": 16,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 16,
+          "-MaxRadius": 17,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 17,
+          "-MaxRadius": 18,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 18,
+          "-MaxRadius": 19,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 19,
+          "-MaxRadius": 20,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-DesignSpeed": 20,
+          "-MinRadius": 20,
+          "-MaxRadius": 25,
+          "-ConVal4": 1.5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 150,
+          "-MaxRadius": 160,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 160,
+          "-MaxRadius": 165,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 60,
+          "-MinRadius": 165,
+          "-MaxRadius": 220,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 0,
+          "-MaxRadius": 0,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 100,
+          "-MaxRadius": 105,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 105,
+          "-MaxRadius": 110,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 110,
+          "-MaxRadius": 115,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 50,
+          "-MinRadius": 115,
+          "-MaxRadius": 150,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 60,
+          "-MaxRadius": 63,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 63,
+          "-MaxRadius": 65,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 65,
+          "-MaxRadius": 70,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 70,
+          "-MaxRadius": 74,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 40,
+          "-MinRadius": 74,
+          "-MaxRadius": 100,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 30,
+          "-MaxRadius": 35,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 35,
+          "-MaxRadius": 37,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 37,
+          "-MaxRadius": 40,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 40,
+          "-MaxRadius": 42,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 30,
+          "-MinRadius": 42,
+          "-MaxRadius": 55,
+          "-ConVal4": 2
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 15,
+          "-MaxRadius": 16,
+          "-ConVal4": 6
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 16,
+          "-MaxRadius": 17,
+          "-ConVal4": 5
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 17,
+          "-MaxRadius": 18,
+          "-ConVal4": 4
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 18,
+          "-MaxRadius": 19,
+          "-ConVal4": 3
+        },
+        {
+          "-NormalCrown": 2,
+          "-DesignSpeed": 20,
+          "-MinRadius": 19,
+          "-MaxRadius": 25,
+          "-ConVal4": 2
+        }
+      ],
+      "StdAppropriateGradient": [
+        {
+          "-MinGradient": 2.0,
+          "-MaxGradient": 5.0,
+          "-IsSnowyColdArea": true,
+          "-STDVal": 2.0
+        },
+        {
+          "-MinGradient": 5.0,
+          "-MaxGradient": 6.0,
+          "-IsSnowyColdArea": true,
+          "-STDVal": 1.0
+        },
+        {
+          "-MinGradient": 6.0,
+          "-MaxGradient": 10.0,
+          "-IsSnowyColdArea": true,
+          "-STDVal": 0.0
+        },
+        {
+          "-MinGradient": 2.0,
+          "-MaxGradient": 5.0,
+          "-IsSnowyColdArea": false,
+          "-STDVal": 2.0
+        },
+        {
+          "-MinGradient": 5.0,
+          "-MaxGradient": 7.0,
+          "-IsSnowyColdArea": false,
+          "-STDVal": 1.0
+        },
+        {
+          "-MinGradient": 7.0,
+          "-MaxGradient": 100.0,
+          "-IsSnowyColdArea": false,
+          "-STDVal": 0.0
+        }
+      ]
+    },
+    "OG": {
+      "-OnesidedGradientRateRemarks": "片勾配すりつけ率の基準値",
+      "-DrainageLwRemarks": "排水のために必要な最小すりつけの要否基準長",
+      "OnesidedGradientRate": [
+        {
+          "-DesignSpeed": 120,
+          "-Rate": 200
+        },
+        {
+          "-DesignSpeed": 100,
+          "-Rate": 175
+        },
+        {
+          "-DesignSpeed": 80,
+          "-Rate": 150
+        },
+        {
+          "-DesignSpeed": 60,
+          "-Rate": 125
+        },
+        {
+          "-DesignSpeed": 50,
+          "-Rate": 115
+        },
+        {
+          "-DesignSpeed": 40,
+          "-Rate": 100
+        },
+        {
+          "-DesignSpeed": 30,
+          "-Rate": 75
+        },
+        {
+          "-DesignSpeed": 20,
+          "-Rate": 50
+        }
+      ],
+      "DrainageLw": [
+        {
+          "-NormalCrown": 1.5,
+          "-AxisToEndOfCarriagewayLength": 1,
+          "-Lw": 30
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-AxisToEndOfCarriagewayLength": 1.5,
+          "-Lw": 36
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-AxisToEndOfCarriagewayLength": 2,
+          "-Lw": 45
+        },
+        {
+          "-NormalCrown": 1.5,
+          "-AxisToEndOfCarriagewayLength": 3,
+          "-Lw": 60
+        },
+        {
+          "-NormalCrown": 2.0,
+          "-AxisToEndOfCarriagewayLength": 1,
+          "-Lw": 40
+        },
+        {
+          "-NormalCrown": 2.0,
+          "-AxisToEndOfCarriagewayLength": 1.5,
+          "-Lw": 48
+        },
+        {
+          "-NormalCrown": 2.0,
+          "-AxisToEndOfCarriagewayLength": 2,
+          "-Lw": 60
+        },
+        {
+          "-NormalCrown": 2.0,
+          "-AxisToEndOfCarriagewayLength": 3,
+          "-Lw": 80
+        }
+      ]
+    },
+    "GG": {
+      "-MinimumLgsRemarks": "緩勾配区間長の最小値",
+      "MinimumLgs": [
+        {
+          "-RoadType": 3,
+          "-RoadClass": 1,
+          "-Lgs": 40
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 2,
+          "-Lgs": 40
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 3,
+          "-Lgs": 35
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 4,
+          "-Lgs": 15
+        },
+        {
+          "-RoadType": 3,
+          "-RoadClass": 5,
+          "-Lgs": 10
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 1,
+          "-Lgs": 40
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 2,
+          "-Lgs": 35
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 3,
+          "-Lgs": 15
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 4,
+          "-Lgs": 6
+        }
+      ]
+    }
+  }
+}
