@@ -1,0 +1,272 @@
+﻿<UserControl
+    x:Class="i_ConVerificationSystem.Forms.Gradient.GGInputParameter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Base="clr-namespace:i_ConVerificationSystem.Forms.Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem.Forms.Gradient"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="LightGray"
+    mc:Ignorable="d">
+    <Grid Height="450" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Base:LandXMLStdInformation
+            x:Name="sib"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Width="290"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <GroupBox
+            x:Name="c"
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Width="470"
+            Height="85"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Header="条件値の入力">
+            <StackPanel Margin="5,5,0,0">
+                <WrapPanel>
+                    <TextBlock Width="190" Text="停止線位置" />
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock
+                        Width="190"
+                        Margin="20,0,0,0"
+                        Text="起点側流入部" />
+                    <TextBlock Text="No." />
+                    <TextBox
+                        x:Name="txtBpn"
+                        Width="50"
+                        Margin="5,0,0,0"
+                        CommandManager.PreviewExecuted="txtBpn_PreviewExecuted"
+                        PreviewTextInput="txtBpn_PreviewTextInput" />
+                    <TextBlock Margin="5,0,0,0" Text="+" />
+                    <TextBox
+                        x:Name="txtBal"
+                        Width="80"
+                        Margin="5,0,0,0"
+                        CommandManager.PreviewExecuted="txtBal_PreviewExecuted"
+                        PreviewTextInput="txtBal_PreviewTextInput" />
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock
+                        Width="190"
+                        Margin="20,0,0,0"
+                        Text="終点側流入部" />
+                    <TextBlock Text="No." />
+                    <TextBox
+                        x:Name="txtEpn"
+                        Width="50"
+                        Margin="5,0,0,0"
+                        CommandManager.PreviewExecuted="txtEpn_PreviewExecuted"
+                        PreviewTextInput="txtEpn_PreviewTextInput" />
+                    <TextBlock Margin="5,0,0,0" Text="+" />
+                    <TextBox
+                        x:Name="txtEal"
+                        Width="80"
+                        Margin="5,0,0,0"
+                        CommandManager.PreviewExecuted="txtEal_PreviewExecuted"
+                        PreviewTextInput="txtEal_PreviewTextInput" />
+                </WrapPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Width="575"
+            Height="289"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Header="交差点の模式図">
+            <Grid>
+                <Path
+                    Width="150"
+                    Height="20"
+                    Margin="79,25,334,212"
+                    Data="M 5 5 L 143 5"
+                    Stroke="Black" />
+                <Path
+                    Width="30"
+                    Height="100"
+                    Margin="216,34,317,132"
+                    Data="M 5 0 L 5 46 L 0 36 M 5 46 L 10 36"
+                    Stroke="Black" />
+                <Path
+                    Width="30"
+                    Height="100"
+                    Margin="79,34,454,132"
+                    Data="M 5 0 L 5 46 L 0 36 M 5 46 L 10 36"
+                    Stroke="Black" />
+                <Border Height="100" Background="CornflowerBlue" />
+                <Border Width="100" Background="CornflowerBlue" />
+                <Border
+                    Width="10"
+                    Height="50"
+                    Margin="216,83,337,133"
+                    Background="White" />
+                <Border
+                    Width="10"
+                    Height="50"
+                    Margin="336,133,217,83"
+                    Background="White" />
+                <TextBlock
+                    Width="100"
+                    Height="13"
+                    Margin="79,0,384,253"
+                    FontSize="9"
+                    Text="必要勾配区間の最小長" />
+                <TextBlock
+                    x:Name="txtLgs1"
+                    Width="100"
+                    Height="20"
+                    Margin="54,14,359,232"
+                    Background="White"
+                    TextAlignment="Center" />
+                <TextBlock
+                    Width="100"
+                    Height="13"
+                    Margin="10,34,453,219"
+                    FontSize="9"
+                    Text="必要緩勾配区間端" />
+                <TextBlock
+                    x:Name="txtXbpslgs"
+                    Width="100"
+                    Height="20"
+                    Margin="24,47,439,199"
+                    Background="White"
+                    TextAlignment="Center" />
+                <TextBlock
+                    Width="100"
+                    Height="13"
+                    Margin="154,34,309,219"
+                    FontSize="9"
+                    Text="停止線位置" />
+                <TextBlock
+                    x:Name="txtXbpsl"
+                    Width="100"
+                    Height="20"
+                    Margin="154,47,309,199"
+                    Background="White"
+                    TextAlignment="Center" />
+                <Path
+                    Width="150"
+                    Height="20"
+                    Margin="336.5,222,76.5,24"
+                    Data="M 5 5 L 143 5"
+                    Stroke="Black" />
+                <Path
+                    Width="30"
+                    Height="100"
+                    Margin="474,183,59,-17"
+                    Data="M 5 46 L 5 0 L 0 10 M 5 0 L 10 10"
+                    Stroke="Black" />
+                <Path
+                    Width="30"
+                    Height="100"
+                    Margin="336.5,183,196.5,-17"
+                    Data="M 5 46 L 5 0 L 0 10 M 5 0 L 10 10"
+                    Stroke="Black" />
+                <TextBlock
+                    Width="100"
+                    Height="13"
+                    Margin="364,253,99,0"
+                    FontSize="9"
+                    Text="必要勾配区間の最小長" />
+                <TextBlock
+                    x:Name="txtLgs2"
+                    Width="100"
+                    Height="20"
+                    Margin="364,232,99,14"
+                    Background="White"
+                    TextAlignment="Center" />
+                <TextBlock
+                    Width="100"
+                    Height="13"
+                    Margin="379,183,84,70"
+                    FontSize="9"
+                    Text="必要緩勾配区間端" />
+                <TextBlock
+                    x:Name="txtXepslgs"
+                    Width="100"
+                    Height="20"
+                    Margin="399,197,64,49"
+                    Background="White"
+                    TextAlignment="Center" />
+                <TextBlock
+                    Width="100"
+                    Height="13"
+                    Margin="279,183,184,70"
+                    FontSize="9"
+                    Text="停止線位置" />
+                <TextBlock
+                    x:Name="txtXepsl"
+                    Width="100"
+                    Height="20"
+                    Margin="294,197,169,49"
+                    Background="White"
+                    TextAlignment="Center" />
+                <Path
+                    Width="340"
+                    Height="20"
+                    Data="M 0 10 L 340 10 L 330 0 M 340 10 L 330 20"
+                    Stroke="Black" />
+                <TextBlock
+                    x:Name="txtAlignmentName"
+                    Height="20"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Background="White"
+                    Text="{Binding alignmentName}" />
+                <TextBlock
+                    Height="20"
+                    Margin="232,114,231,132"
+                    HorizontalAlignment="Center"
+                    Text="測点増加方向" />
+                <Button
+                    Width="75"
+                    Margin="478,10,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="GetStdValueButton_Click"
+                    Content="基準値取得" />
+            </Grid>
+        </GroupBox>
+        <ScrollViewer
+            Grid.Row="2"
+            Grid.Column="0"
+            Height="75"
+            Margin="10,0,0,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            VerticalScrollBarVisibility="Auto">
+            <TextBlock
+                MinHeight="75"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Background="White"
+                Text="【照査概要】&#10;道路区分に応じた緩勾配区間長が確保されているか確認します。"
+                TextWrapping="Wrap" />
+        </ScrollViewer>
+    </Grid>
+</UserControl>

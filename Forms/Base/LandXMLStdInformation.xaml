@@ -1,0 +1,139 @@
+﻿<UserControl
+    x:Class="i_ConVerificationSystem.Forms.Base.LandXMLStdInformation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem.Forms.Base"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="290"
+    Height="175"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <GroupBox x:Name="c" Header="基本情報の取得">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                Text="道路の規格・等級" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                Text="設計速度" />
+            <WrapPanel
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="6"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock Text="第" />
+                <TextBox
+                    x:Name="txtType"
+                    Width="39"
+                    IsReadOnly="True"
+                    Text="{Binding rType.Value}"
+                    TextWrapping="NoWrap" />
+                <TextBlock Text="種" />
+                <TextBlock Margin="5,0,0,0" Text="第" />
+                <TextBox
+                    x:Name="txtClass"
+                    Width="39"
+                    IsReadOnly="True"
+                    Text="{Binding rClass.Value}"
+                    TextWrapping="NoWrap" />
+                <TextBlock Text="級" />
+            </WrapPanel>
+            <WrapPanel
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="6"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock Text="v=" />
+                <TextBox
+                    x:Name="txtDesignSpeed"
+                    Width="55"
+                    Margin="5,0,0,0"
+                    IsReadOnly="True"
+                    Text="{Binding ds.Value}"
+                    TextWrapping="NoWrap" />
+                <TextBlock Margin="5,0,0,0" Text="km/h" />
+            </WrapPanel>
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                Text="直線部の横断勾配" />
+            <WrapPanel
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="6"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock Text="i=" />
+                <TextBox
+                    x:Name="txtSltg"
+                    Width="55"
+                    Margin="5,0,0,0"
+                    IsReadOnly="True"
+                    Text="{Binding sltg.Value}"
+                    TextWrapping="NoWrap" />
+                <TextBlock Margin="5,0,0,0" Text="%" />
+            </WrapPanel>
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                Text="測点間隔" />
+            <WrapPanel
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="6"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock Text="α=" />
+                <TextBox
+                    x:Name="txtInterval"
+                    Width="55"
+                    Margin="5,0,0,0"
+                    IsReadOnly="True"
+                    Text="{Binding interval.Value}"
+                    TextWrapping="NoWrap" />
+            </WrapPanel>
+            <Button
+                x:Name="btnGetFromLandXML"
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="6"
+                Height="30"
+                MinWidth="100"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                x:FieldModifier="public"
+                Click="GetFromLandXMLButton_Click"
+                Content="LandXMLから取得" />
+        </Grid>
+    </GroupBox>
+</UserControl>

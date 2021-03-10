@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="i_ConVerificationSystem.Forms.Print.PrintForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem.Forms.Print"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="900"
+    d:DesignWidth="1024"
+    Loaded="UserControl_Loaded"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel>
+            <Grid
+                x:Name="reportArea"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+            <WrapPanel>
+                <Button
+                    Name="btnPrevious"
+                    Margin="20,10,0,10"
+                    Padding="10"
+                    HorizontalAlignment="Center"
+                    Click="btnPrevious_Click"
+                    Content="前のページ" />
+                <Button
+                    Name="btnNext"
+                    Margin="20,10,0,10"
+                    Padding="10"
+                    HorizontalAlignment="Center"
+                    Click="btnNext_Click"
+                    Content="次のページ" />
+                <Button
+                    Name="btnPrint"
+                    Margin="20,10,0,10"
+                    Padding="10"
+                    HorizontalAlignment="Center"
+                    Click="btnPrint_Click"
+                    Content="印刷" />
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

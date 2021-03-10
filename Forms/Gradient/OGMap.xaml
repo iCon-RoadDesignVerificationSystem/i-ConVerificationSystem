@@ -1,0 +1,347 @@
+﻿<UserControl
+    x:Class="i_ConVerificationSystem.Forms.Gradient.OGMap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Plot="clr-namespace:i_ConVerificationSystem.Forms.Plot"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem.Forms.Gradient"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <GroupBox Header="標準幅員の設定">
+        <ScrollViewer
+            x:Name="c_dataGridScrollViewer"
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Auto">
+            <Grid x:Name="stdGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding Width, ElementName=c_dataGrid}" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Border
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="100,0,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    BorderBrush="Black"
+                    BorderThickness="1">
+                    <TextBlock Background="White" Text="F*n0=幅員中心" />
+                </Border>
+                <DataGrid
+                    x:Name="c_dataGrid"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="False"
+                    CanUserResizeColumns="False"
+                    CanUserResizeRows="False"
+                    CanUserSortColumns="False"
+                    HeadersVisibility="All"
+                    HorizontalScrollBarVisibility="Hidden"
+                    ItemsSource="{Binding _DispItems}"
+                    VerticalScrollBarVisibility="Hidden">
+                    <DataGrid.Resources>
+                        <x:Array
+                            x:Key="Name_JItems"
+                            x:Name="Name_JComboItems"
+                            Type="{x:Type local:Name_JItemsToComboBox}">
+                            <local:Name_JItemsToComboBox _Label="中央帯" _Value="CenterStrip" />
+                            <local:Name_JItemsToComboBox _Label="中央分離帯" _Value="CenterSprit" />
+                            <local:Name_JItemsToComboBox _Label="中央帯側帯" _Value="CenterMarginalStrip" />
+                            <local:Name_JItemsToComboBox _Label="車道" _Value="Carriageway" />
+                            <local:Name_JItemsToComboBox _Label="付加車線" _Value="AdditionalLane" />
+                            <local:Name_JItemsToComboBox _Label="路肩" _Value="Roadshoulder" />
+                            <local:Name_JItemsToComboBox _Label="路肩側帯" _Value="MarginalStrip" />
+                            <local:Name_JItemsToComboBox _Label="右側路肩" _Value="RoadshoulderR" />
+                            <local:Name_JItemsToComboBox _Label="植樹帯" _Value="PlantingLane" />
+                            <local:Name_JItemsToComboBox _Label="歩道" _Value="Sidewalk" />
+                            <local:Name_JItemsToComboBox _Label="自転車歩行者道" _Value="Sidepath" />
+                            <local:Name_JItemsToComboBox _Label="自転車道" _Value="Cycletrack" />
+                            <local:Name_JItemsToComboBox _Label="自転車通行帯" _Value="Bikelane" />
+                            <local:Name_JItemsToComboBox _Label="停車帯" _Value="StoppingArea" />
+                            <local:Name_JItemsToComboBox _Label="その他" _Value="Other" />
+                        </x:Array>
+                        <x:Array
+                            x:Key="GroupCodeItems"
+                            x:Name="GroupCodeComboItems"
+                            Type="{x:Type local:GroupCodeToComboBox}">
+                            <local:GroupCodeToComboBox _Label="-" _Value="None" />
+                            <local:GroupCodeToComboBox _Label="Group1" _Value="Group1" />
+                            <local:GroupCodeToComboBox _Label="Group2" _Value="Group2" />
+
+                            <local:GroupCodeToComboBox _Label="Group3" _Value="Group3" />
+                            <local:GroupCodeToComboBox _Label="Group4" _Value="Group4" />
+                            <local:GroupCodeToComboBox _Label="Group5" _Value="Group5" />
+                        </x:Array>
+                        <Style x:Key="RotateCellStyle" TargetType="{x:Type TextBlock}">
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="90" />
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                        <Style x:Key="RotateAndPaintCellStyle" TargetType="{x:Type TextBlock}">
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="90" />
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="Left">
+                                    <Setter Property="Background" Value="LightGreen" />
+                                </Trigger>
+                                <Trigger Property="Text" Value="Right">
+                                    <Setter Property="Background" Value="LightPink" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="90" />
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.LayoutTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="-90" />
+                        </TransformGroup>
+                    </DataGrid.LayoutTransform>
+                    <DataGrid.RowHeaderStyle>
+                        <Style TargetType="DataGridRowHeader">
+                            <Setter Property="Content" Value="{Binding Code}" />
+                            <Setter Property="Background" Value="Black" />
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="TextBlock.LayoutTransform">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="90" />
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.RowHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="片勾配すりつけ&#10;計算における&#10;車道縁" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        IsChecked="{Binding IsEndPosition.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <CheckBox.LayoutTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="90" />
+                                            </TransformGroup>
+                                        </CheckBox.LayoutTransform>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="FH位置" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        IsChecked="{Binding IsFHPosition.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <CheckBox.LayoutTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="90" />
+                                            </TransformGroup>
+                                        </CheckBox.LayoutTransform>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Binding="{Binding WResultType}"
+                            Header="照査結果"
+                            IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style BasedOn="{StaticResource RotateCellStyle}" TargetType="{x:Type TextBlock}" />
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn Header="幅員のグループ名2" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox
+                                        x:Name="cmbGroup2Name"
+                                        DisplayMemberPath="_Label"
+                                        ItemsSource="{StaticResource Name_JItems}"
+                                        SelectedValue="{Binding Group2Name.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        SelectedValuePath="_Value">
+                                        <ComboBox.LayoutTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="90" />
+                                            </TransformGroup>
+                                        </ComboBox.LayoutTransform>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="幅員のグループ2" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox
+                                        x:Name="cmbGroup2"
+                                        DisplayMemberPath="_Label"
+                                        ItemsSource="{StaticResource GroupCodeItems}"
+                                        SelectedValue="{Binding Group2.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        SelectedValuePath="_Value">
+                                        <ComboBox.LayoutTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="90" />
+                                            </TransformGroup>
+                                        </ComboBox.LayoutTransform>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="幅員のグループ名1" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox
+                                        x:Name="cmbGroup1Name"
+                                        DisplayMemberPath="_Label"
+                                        ItemsSource="{StaticResource Name_JItems}"
+                                        SelectedValue="{Binding Group1Name.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        SelectedValuePath="_Value">
+                                        <ComboBox.LayoutTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="90" />
+                                            </TransformGroup>
+                                        </ComboBox.LayoutTransform>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="幅員のグループ1" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox
+                                        x:Name="cmbGroup1"
+                                        DisplayMemberPath="_Label"
+                                        ItemsSource="{StaticResource GroupCodeItems}"
+                                        SelectedValue="{Binding Group1.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        SelectedValuePath="_Value">
+                                        <ComboBox.LayoutTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="90" />
+                                            </TransformGroup>
+                                        </ComboBox.LayoutTransform>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Binding="{Binding Width}"
+                            Header="幅員"
+                            IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style BasedOn="{StaticResource RotateCellStyle}" TargetType="{x:Type TextBlock}" />
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn Header="変更後の日本語名" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox
+                                        x:Name="cmbName_J"
+                                        DisplayMemberPath="_Label"
+                                        DropDownClosed="cmbName_J_DropDownClosed"
+                                        ItemsSource="{StaticResource Name_JItems}"
+                                        SelectedValue="{Binding Name_J_Modify.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        SelectedValuePath="_Value"
+                                        SelectionChanged="cmbName_J_SelectionChanged">
+                                        <ComboBox.LayoutTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="90" />
+                                            </TransformGroup>
+                                        </ComboBox.LayoutTransform>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Binding="{Binding Name_J}"
+                            Header="要素の日本語名"
+                            IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style BasedOn="{StaticResource RotateCellStyle}" TargetType="{x:Type TextBlock}" />
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn
+                            Binding="{Binding Name}"
+                            Header="要素名"
+                            IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style BasedOn="{StaticResource RotateCellStyle}" TargetType="{x:Type TextBlock}" />
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn
+                            Binding="{Binding Number}"
+                            Header="番号"
+                            IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style BasedOn="{StaticResource RotateCellStyle}" TargetType="{x:Type TextBlock}" />
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn Header="チェック対象" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Click="IsTarget_Click"
+                                        IsChecked="{Binding IsTarget.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <CheckBox.LayoutTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="90" />
+                                            </TransformGroup>
+                                        </CheckBox.LayoutTransform>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Binding="{Binding Side}"
+                            Header="左右の別"
+                            IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style BasedOn="{StaticResource RotateAndPaintCellStyle}" TargetType="{x:Type TextBlock}" />
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Plot:TransversePlot
+                    x:Name="TPlotArea"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="100,0,0,0" />
+            </Grid>
+        </ScrollViewer>
+    </GroupBox>
+</UserControl>

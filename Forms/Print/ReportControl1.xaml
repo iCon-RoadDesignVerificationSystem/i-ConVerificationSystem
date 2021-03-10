@@ -1,0 +1,142 @@
+﻿<UserControl
+    x:Class="i_ConVerificationSystem.Forms.Print.ReportControl1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem.Forms.Print"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="1122"
+    Height="794"
+    mc:Ignorable="d">
+    <!--  帳票フォーマットサンプル(A4: 8.27 * 96dpi 11.69 * 96dpi)  -->
+    <!--  Meiryo UI, 游ゴシック, 游明朝  -->
+    <!--<RichTextBox
+        Block.LineHeight="12"
+        FontFamily="Meiryo UI"
+        FontSize="15"
+        IsReadOnly="True">-->
+    <!--<RichTextBox
+        Block.LineHeight="1"
+        FontFamily="游ゴシック"
+        FontSize="15"
+        IsReadOnly="True">-->
+    <RichTextBox
+        Block.LineHeight="1"
+        BorderThickness="0"
+        FontFamily="Yu Gothic"
+        FontSize="15"
+        IsReadOnly="True">
+        <FlowDocument Background="White">
+            <Paragraph Margin="0,0,0,0" TextAlignment="Right">
+                <Run Text="{Binding checkDate}" />
+            </Paragraph>
+            <Paragraph
+                FontSize="30"
+                FontWeight="Bold"
+                TextAlignment="Center">
+                LandXMLファイルを使用した幾何構造照査結果
+            </Paragraph>
+            <Paragraph />
+            <Paragraph FontSize="20" TextIndent="112">
+                プロジェクト名称：<Run Text="{Binding projectName}" />
+            </Paragraph>
+            <Paragraph FontSize="20" TextIndent="112">
+                参照ファイル名：<Run Text="{Binding fileName}" />
+            </Paragraph>
+            <Paragraph FontSize="20" TextIndent="112">
+                ファイル作成会社：<Run Text="{Binding companyName}" />
+            </Paragraph>
+            <Paragraph FontSize="20" TextIndent="112">
+                チェック担当者：
+            </Paragraph>
+            <Paragraph TextIndent="300">
+                <Run Text="＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿" />
+            </Paragraph>
+            <Paragraph />
+            <Table Margin="150,0,0,0" CellSpacing="0">
+                <Table.Columns>
+                    <TableColumn Width="243.5" />
+                    <TableColumn Width="785.33" />
+                </Table.Columns>
+                <TableRowGroup>
+                    <TableRow>
+                        <TableCell
+                            Padding="6.6,0,6.6,0"
+                            BorderBrush="#00000000"
+                            BorderThickness="1,1,1,1">
+                            <Paragraph FontSize="19" FontWeight="Bold">
+                                エラー件数(確認件数)
+                            </Paragraph>
+                            <Paragraph FontSize="19">
+                                LandXML：<Run Text="{Binding LandXMLErrorCount}" />
+                            </Paragraph>
+                            <Paragraph FontSize="19">
+                                幅員構成要素：<Run Text="{Binding WCErrorCount}" />
+                            </Paragraph>
+                            <Paragraph FontSize="19">
+                                幅員：<Run Text="{Binding WErrorCount}" />
+                            </Paragraph>
+                            <Paragraph FontSize="19">
+                                横断勾配：<Run Text="{Binding TGErrorCount}" />
+                            </Paragraph>
+                            <Paragraph FontSize="19">
+                                片勾配すりつけ：<Run Text="{Binding OGErrorCount}" />
+                            </Paragraph>
+                            <Paragraph FontSize="19">
+                                緩勾配区間長：<Run Text="{Binding GGErrorCount}" />
+                            </Paragraph>
+                        </TableCell>
+                        <TableCell
+                            Padding="6.6,0,6.6,0"
+                            BorderBrush="#00000000"
+                            BorderThickness="1,1,1,1">
+                            <Paragraph FontSize="19" FontWeight="Bold">
+                                照査内容
+                            </Paragraph>
+                            <Paragraph>
+                                ①道路構造令の解説と運用、平成27年6月、公益社団法人日本道路協会
+                            </Paragraph>
+                            <Paragraph>
+                                ②道路構造令、平成31年4月25日施行
+                            </Paragraph>
+                            <Paragraph>
+                                ③設計要領第四集　幾何構造、平成28年8月、株式会社高速道路総合技術研究所
+                            </Paragraph>
+                            <Paragraph>
+                                上記技術基準に準じ、以下の内容が照査されました。
+                            </Paragraph>
+                            <Paragraph />
+                            <Paragraph>
+                                参照されたファイルが”LandXML”の道路データであるか確認しました。
+                            </Paragraph>
+                            <Paragraph>
+                                計画された幅員構成要素に過不足がないか確認しました。
+                            </Paragraph>
+                            <Paragraph>
+                                計画された幅員が道路区分等に応じた値で計画されているか確認しました。
+                            </Paragraph>
+                            <Paragraph>
+                                直線部の横断勾配が適切か確認しました。
+                            </Paragraph>
+                            <Paragraph>
+                                車道の片勾配の値が適切か確認しました。
+                            </Paragraph>
+                            <Paragraph>
+                                路肩の横断勾配が適切か確認しました。
+                            </Paragraph>
+                            <Paragraph>
+                                歩道、自転車歩行者道・自転車道の横断勾配が適切か確認しました。
+                            </Paragraph>
+                            <Paragraph>
+                                片勾配すりつけが適切になされているか確認しました。
+                            </Paragraph>
+                            <Paragraph>
+                                道路区分に応じた緩勾配区間長が確保されているか確認しました。
+                            </Paragraph>
+                        </TableCell>
+                    </TableRow>
+                </TableRowGroup>
+            </Table>
+        </FlowDocument>
+    </RichTextBox>
+</UserControl>

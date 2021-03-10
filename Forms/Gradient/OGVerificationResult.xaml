@@ -1,0 +1,587 @@
+﻿<UserControl
+    x:Class="i_ConVerificationSystem.Forms.Gradient.OGVerificationResult"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Base="clr-namespace:i_ConVerificationSystem.Forms.Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem.Forms.Gradient"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="1200"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.Resources>
+            <SolidColorBrush x:Key="HeaderBackground" Color="LightGray" />
+
+            <!--  Gridのヘッダー  -->
+            <Style x:Key="HeaderStyle" TargetType="Border">
+                <Setter Property="BorderBrush" Value="Black" />
+                <Setter Property="Background" Value="{StaticResource HeaderBackground}" />
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                <Setter Property="BorderThickness" Value="0,0,0.5,0.5" />
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+            </Style>
+
+            <!--  カラムのリサイズ用Thumbのスタイル  -->
+            <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+                <Setter Property="Width" Value="8" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Cursor" Value="SizeWE" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--  左上のSelectAll用のスタイルテンプレート  -->
+            <ControlTemplate x:Key="SelectAllButtonTemplate" TargetType="{x:Type Button}">
+                <Grid>
+                    <Border
+                        Background="{StaticResource HeaderBackground}"
+                        BorderBrush="Black"
+                        BorderThickness="0,0,0.5,0.5"
+                        SnapsToDevicePixels="True" />
+                </Grid>
+            </ControlTemplate>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  3段組み上段  -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <!--  Rowヘッダー固定用  -->
+                <ColumnDefinition Width="{Binding ElementName=DataGrid1, Path=RowHeaderWidth}" />
+                <!--  横スクロール範囲用  -->
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--  Rowヘッダー固定用  -->
+            <Border Grid.Column="0" Style="{StaticResource HeaderStyle}" />
+
+            <!--  横スクロールのためにScrollViewerでくくる  -->
+            <ScrollViewer
+                Name="HeaderScrollViewer"
+                Grid.Column="1"
+                HorizontalScrollBarVisibility="Hidden"
+                VerticalScrollBarVisibility="Visible">
+                <ScrollViewer.Resources>
+                    <!--  右側のスクロールバーを塗りつぶす  -->
+                    <Style TargetType="ScrollBar">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Grid Background="{TemplateBinding ContentControl.Background}" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ScrollViewer.Resources>
+
+                <StackPanel>
+                    <!--  3段組本体  -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <!--  対応するDataGridのカラムのActualWidthをバインドする  -->
+                            <ColumnDefinition Width="{Binding ElementName=column1, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column2, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column3, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column4, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column5, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column7, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column8, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column9, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column10, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column11, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column12, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column13, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column14, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column15, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column16, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column17, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column18, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column19, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column20, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column21, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column22, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column23, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column24, Path=ActualWidth}" />
+                            <ColumnDefinition Width="{Binding ElementName=column25, Path=ActualWidth}" />
+
+                            <!--  カラム表示エリアが余った場合用  -->
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+
+                        <!--  GridのColumnSpanを使ってマージ  -->
+                        <Grid
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <StackPanel VerticalAlignment="Center">
+                                    <Label HorizontalAlignment="Center">片勾配</Label>
+                                    <Label HorizontalAlignment="Center">すりつけ区間</Label>
+                                </StackPanel>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperA1"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column2}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.RowSpan="2"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <StackPanel VerticalAlignment="Center">
+                                    <Label HorizontalAlignment="Center">片勾配すりつけ区間</Label>
+                                    <Label HorizontalAlignment="Center">累加距離標</Label>
+                                </StackPanel>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperA2"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column4}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.RowSpan="2"
+                            Grid.Column="4"
+                            Grid.ColumnSpan="1">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" />
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperA3"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column5}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.RowSpan="2"
+                            Grid.Column="5"
+                            Grid.ColumnSpan="3">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Center">片勾配すりつけ率</Label>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperA5"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column9}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.RowSpan="2"
+                            Grid.Column="8"
+                            Grid.ColumnSpan="1">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" />
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperA6"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column10}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.RowSpan="2"
+                            Grid.Column="9"
+                            Grid.ColumnSpan="1">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" />
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperA7"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column11}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid Grid.Column="10" Grid.ColumnSpan="14">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center">照査結果</Label>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperA8"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column25}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid Grid.RowSpan="2" Grid.Column="25">
+                            <Border Style="{StaticResource HeaderStyle}" />
+                        </Grid>
+
+                        <!--  ここから照査結果列  -->
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Center">片勾配すりつけ率の判定</Label>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperB11"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column13}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="12"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Center">排水のために必要な最小すりつけの判定</Label>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperB12"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column15}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="14"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Center">片勾配すりつけ区間が緩和区間内に収まっているか</Label>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperB13"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column17}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="16"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Center">横断勾配0の点とKAの差がA/10以下となっているか</Label>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperB14"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column19}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="18"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Center">複合円の場合に小円1/2、大円1/2の割合ですりついているか</Label>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperB15"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column21}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="20"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Center">横断勾配0の点がBC点と一致しているか</Label>
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperB16"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column23}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                        <Grid
+                            Grid.Row="1"
+                            Grid.Column="22"
+                            Grid.ColumnSpan="2">
+                            <Border Style="{StaticResource HeaderStyle}">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="直線から緩和区間なしに直接、円曲線に接続する場合に&#10;一様なすりつけを行う場合に、直線部1/2、円曲線部1/2の&#10;割合ですりついているか" />
+                            </Border>
+                            <Thumb
+                                Name="HeaderGripperB17"
+                                HorizontalAlignment="Right"
+                                Base:DataGridHeaderThumbBehavior.SyncColumn="{Binding ElementName=column25}"
+                                Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        </Grid>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <!--  DataGrid本体  -->
+        <DataGrid
+            Name="DataGrid1"
+            Grid.Row="1"
+            Base:DataGridSelectAllStyleBehavior.SelectAllStyleTemplate="{StaticResource SelectAllButtonTemplate}"
+            AutoGenerateColumns="False"
+            BorderThickness="0"
+            CanUserAddRows="False"
+            CanUserReorderColumns="False"
+            CanUserSortColumns="False"
+            IsReadOnly="True"
+            ItemsSource="{Binding ListData}"
+            RowHeaderWidth="10">
+            <!--  左上のスタイルを設定  -->
+            <DataGrid.Resources>
+                <!--  上段と横スクロールをあわせるためのビヘイビア  -->
+                <Style TargetType="ScrollViewer">
+                    <Setter Property="Base:HorizontalScrollSyncBehavior.SyncElement" Value="{Binding ElementName=HeaderScrollViewer}" />
+                </Style>
+                <Style x:Key="PaintCellStyle" TargetType="{x:Type TextBlock}">
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="NG">
+                            <Setter Property="Background" Value="LightPink" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="OK_C">
+                            <Setter Property="Background" Value="LightSalmon" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="SKIP">
+                            <Setter Property="Background" Value="LightGray" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.ColumnHeaderStyle>
+                <!--  上段のヘッダーと微調整するために下段のヘッダーもテンプレートも個別指定する  -->
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Border Style="{StaticResource HeaderStyle}">
+                                        <ContentControl
+                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Content="{TemplateBinding ContentControl.Content}"
+                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    </Border>
+                                    <Thumb
+                                        x:Name="PART_LeftHeaderGripper"
+                                        HorizontalAlignment="Left"
+                                        Style="{StaticResource ColumnHeaderGripperStyle}" />
+                                    <Thumb
+                                        x:Name="PART_RightHeaderGripper"
+                                        HorizontalAlignment="Right"
+                                        Style="{StaticResource ColumnHeaderGripperStyle}" />
+
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    x:Name="column1"
+                    MinWidth="50"
+                    Binding="{Binding vrNum}"
+                    Header="No"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column2"
+                    MinWidth="50"
+                    Binding="{Binding point}"
+                    Header="Position"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column3"
+                    MinWidth="50"
+                    Binding="{Binding beginSta}"
+                    Header="起点側"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column4"
+                    MinWidth="50"
+                    Binding="{Binding endSta}"
+                    Header="終点側"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column5"
+                    MinWidth="50"
+                    Binding="{Binding ls}"
+                    Header="片勾配すりつけ長"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column7"
+                    MinWidth="50"
+                    Binding="{Binding straight2MaximumOnesidedGradientRate}"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center" Text="直線部の横断勾配" />
+                            <TextBlock HorizontalAlignment="Center" Text="～" />
+                            <TextBlock HorizontalAlignment="Center" Text="曲線内最大片勾配" />
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column8"
+                    MinWidth="50"
+                    Binding="{Binding changePoint2MaximumOnesidedGradientRate}"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center" Text="片勾配すりつけ率の変化" />
+                            <TextBlock HorizontalAlignment="Center" Text="～" />
+                            <TextBlock HorizontalAlignment="Center" Text="曲線内最大片勾配" />
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column9"
+                    MinWidth="50"
+                    Binding="{Binding maximumOnesidedGradientRate2MaximumOnesidedGradientRate}"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center" Text="曲線内最大片勾配" />
+                            <TextBlock HorizontalAlignment="Center" Text="～" />
+                            <TextBlock HorizontalAlignment="Center" Text="曲線内最大片勾配" />
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column10"
+                    MinWidth="50"
+                    Binding="{Binding hasMitigationArea}"
+                    Header="緩和区間の有無"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column11"
+                    MinWidth="50"
+                    Binding="{Binding onesidedGradientShape}"
+                    Header="片勾配すりつけ形状"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column12"
+                    MinWidth="50"
+                    Binding="{Binding vror_ResultType}"
+                    Header="判定"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource PaintCellStyle}" TargetType="{x:Type TextBlock}" />
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column13"
+                    MinWidth="300"
+                    Binding="{Binding vror_Message}"
+                    Header="コメント"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column14"
+                    MinWidth="50"
+                    Binding="{Binding vrg4d_ResultType}"
+                    Header="判定"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource PaintCellStyle}" TargetType="{x:Type TextBlock}" />
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column15"
+                    MinWidth="300"
+                    Binding="{Binding vrg4d_Message}"
+                    Header="コメント"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column16"
+                    MinWidth="50"
+                    Binding="{Binding vrma_ResultType}"
+                    Header="判定"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource PaintCellStyle}" TargetType="{x:Type TextBlock}" />
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column17"
+                    MinWidth="300"
+                    Binding="{Binding vrma_Message}"
+                    Header="コメント"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column18"
+                    MinWidth="50"
+                    Binding="{Binding vrtg_ResultType}"
+                    Header="判定"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource PaintCellStyle}" TargetType="{x:Type TextBlock}" />
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column19"
+                    MinWidth="300"
+                    Binding="{Binding vrtg_Message}"
+                    Header="コメント"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column20"
+                    MinWidth="50"
+                    Binding="{Binding vrcu_ResultType}"
+                    Header="判定"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource PaintCellStyle}" TargetType="{x:Type TextBlock}" />
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column21"
+                    MinWidth="300"
+                    Binding="{Binding vrcu_Message}"
+                    Header="コメント"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column22"
+                    MinWidth="50"
+                    Binding="{Binding vrtg0_ResultType}"
+                    Header="判定"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource PaintCellStyle}" TargetType="{x:Type TextBlock}" />
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column23"
+                    MinWidth="300"
+                    Binding="{Binding vrtg0_Message}"
+                    Header="コメント"
+                    IsReadOnly="True" />
+                <DataGridTextColumn
+                    x:Name="column24"
+                    MinWidth="50"
+                    Binding="{Binding vrs2c_ResultType}"
+                    Header="判定"
+                    IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource PaintCellStyle}" TargetType="{x:Type TextBlock}" />
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    x:Name="column25"
+                    MinWidth="300"
+                    Binding="{Binding vrs2c_Message}"
+                    Header="コメント"
+                    IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border
+            Grid.RowSpan="3"
+            BorderBrush="Black"
+            BorderThickness="0.25" />
+    </Grid>
+</UserControl>

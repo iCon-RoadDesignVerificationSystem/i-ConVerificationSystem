@@ -1,0 +1,245 @@
+﻿<UserControl
+    x:Class="i_ConVerificationSystem.Forms.WidthComposition.WCInputParameter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Base="clr-namespace:i_ConVerificationSystem.Forms.Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem.Forms.WidthComposition"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="504"
+    d:DesignWidth="783"
+    Background="LightGray"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <x:Array
+            x:Key="RoadSideStandard"
+            x:Name="RoadSideStandardComboItem"
+            Type="{x:Type local:RoadSideStandardToComboBox}">
+            <local:RoadSideStandardToComboBox _Label="普通道路" _Value="NormalRoad" />
+            <local:RoadSideStandardToComboBox _Label="小型道路" _Value="SmallRoad" />
+        </x:Array>
+        <x:Array
+            x:Key="StreetSideFacilitiesType"
+            x:Name="StreetSideFacilitiesTypeComboItem"
+            Type="{x:Type local:StreetSideFacilitiesTypeToComboBox}">
+            <local:StreetSideFacilitiesTypeToComboBox _Label="" _Value="None" />
+            <local:StreetSideFacilitiesTypeToComboBox _Label="横断歩道橋" _Value="Footbridge" />
+            <local:StreetSideFacilitiesTypeToComboBox _Label="ベンチの上屋" _Value="BenchShed" />
+            <local:StreetSideFacilitiesTypeToComboBox _Label="並木" _Value="Trees" />
+            <local:StreetSideFacilitiesTypeToComboBox _Label="ベンチ" _Value="Bench" />
+            <local:StreetSideFacilitiesTypeToComboBox _Label="その他" _Value="ETC" />
+        </x:Array>
+        <x:Array
+            x:Key="Topography"
+            x:Name="TopographyComboItem"
+            Type="{x:Type local:TopographyToComboBox}">
+            <local:TopographyToComboBox _Label="平地部" _Value="Plain" />
+            <local:TopographyToComboBox _Label="山地部" _Value="Mountainous" />
+        </x:Array>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="315" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Base:LandXMLStdInformation
+            x:Name="sib"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <GroupBox
+            x:Name="c"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Width="453"
+            Height="484"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Header="条件値の入力">
+            <Grid>
+                <StackPanel Margin="10,10,0,0">
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="計画交通量" />
+                        <TextBlock Width="30" Text="Q=" />
+                        <TextBox
+                            x:Name="txtPtv"
+                            Width="100"
+                            Margin="5,0,0,0"
+                            CommandManager.PreviewExecuted="txtPtv_PreviewExecuted"
+                            PreviewTextInput="txtPtv_PreviewTextInput" />
+                        <TextBlock
+                            Width="30"
+                            Margin="5,0,0,0"
+                            Text="台/日" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="大型車混入率" />
+                        <TextBlock Width="30" Text="T=" />
+                        <TextBox
+                            x:Name="txtLvmr"
+                            Width="100"
+                            Margin="5,0,0,0"
+                            CommandManager.PreviewExecuted="txtLvmr_PreviewExecuted"
+                            PreviewTextInput="txtLvmr_PreviewTextInput" />
+                        <TextBlock
+                            Width="30"
+                            Margin="5,0,0,0"
+                            Text="%" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="自転車ネットワーク計画の有無" />
+                        <RadioButton x:Name="rdbIsBnpTrue" Content="有" />
+                        <RadioButton
+                            x:Name="rdbIsBnpFalse"
+                            Margin="80,0,0,0"
+                            Content="無" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="第3種第1級の道路に接続する&#10;第4種第1級の道路" />
+                        <RadioButton
+                            x:Name="rdbIsConnect41to31True"
+                            Margin="0,10,0,0"
+                            Content="該当" />
+                        <RadioButton
+                            x:Name="rdbIsConnect41to31False"
+                            Margin="80,10,0,0"
+                            Content="非該当" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="主要道路に該当する第3種第2級&#10;または第4種第1級の道路" />
+                        <RadioButton
+                            x:Name="rdbIsConnect41to32True"
+                            Margin="0,10,0,0"
+                            Content="該当" />
+                        <RadioButton
+                            x:Name="rdbIsConnect41to32False"
+                            Margin="80,10,0,0"
+                            Content="非該当" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="普通道路／小型道路の別" />
+                        <ComboBox
+                            x:Name="cmbRss"
+                            Width="180"
+                            DisplayMemberPath="_Label"
+                            ItemsSource="{StaticResource RoadSideStandard}"
+                            SelectedValuePath="_Value" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="暫定計画の有無" />
+                        <RadioButton x:Name="rdbIsppTrue" Content="有" />
+                        <RadioButton
+                            x:Name="rdbIsppFalse"
+                            Margin="80,0,0,0"
+                            Content="無" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="自転車交通量" />
+                        <RadioButton
+                            x:Name="rdbQcycleStdOverTrue"
+                            Width="120"
+                            Content="500台/日以上" />
+                        <RadioButton x:Name="rdbQcycleStdOverFalse" Content="500台/日未満" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="歩行者交通量" />
+                        <RadioButton
+                            x:Name="rdbQpedeStdOverTrue"
+                            Width="120"
+                            Content="500人/日以上" />
+                        <RadioButton x:Name="rdbQpedeStdOverFalse" Content="500人/日未満" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="路上施設の種類" />
+                        <ComboBox
+                            x:Name="cmbSsft"
+                            Width="180"
+                            DisplayMemberPath="_Label"
+                            ItemsSource="{StaticResource StreetSideFacilitiesType}"
+                            SelectedValuePath="_Value" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="道路の属する地域の地形" />
+                        <ComboBox
+                            x:Name="cmbTg"
+                            Width="180"
+                            DisplayMemberPath="_Label"
+                            ItemsSource="{StaticResource Topography}"
+                            SelectedValuePath="_Value" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="200" Text="交差点の多い第4種道路" />
+                        <RadioButton x:Name="rdbIsLcp4True" Content="該当" />
+                        <RadioButton
+                            x:Name="rdbIsLcp4False"
+                            Margin="80,0,0,0"
+                            Content="非該当" />
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <ScrollViewer
+            Grid.Row="1"
+            Grid.Column="0"
+            Height="169"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            VerticalScrollBarVisibility="Auto">
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                MinHeight="169"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="White"
+                Text="【照査概要-幅員構成】&#10;計画された幅員構成要素が過不足がないか確認します。&#10;&#10;【照査概要-幅員】&#10;計画された幅員が道路区分等に応じた値で計画されているか確認します。"
+                TextWrapping="Wrap" />
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,202 @@
+﻿<UserControl
+    x:Class="i_ConVerificationSystem.Forms.Gradient.TGInputParameter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Base="clr-namespace:i_ConVerificationSystem.Forms.Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:i_ConVerificationSystem.Forms.Gradient"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="LightGray"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <x:Array
+            x:Key="RoadPavingType"
+            x:Name="RoadPavingTypeComboItems"
+            Type="{x:Type local:RoadPavingTypeToComboBox}">
+            <local:RoadPavingTypeToComboBox _Label="アスファルトCo舗装またはAsCo舗装等" _Value="CeCoOrAsCoRoad" />
+            <local:RoadPavingTypeToComboBox _Label="その他の路面" _Value="OtherType" />
+        </x:Array>
+        <x:Array
+            x:Key="SidewalkPavingType"
+            x:Name="SidewalkPavingTypeComboItems"
+            Type="{x:Type local:SidewalkPavingTypeToComboBox}">
+            <local:SidewalkPavingTypeToComboBox _Label="透水性舗装" _Value="WaterPermeableType" />
+            <local:SidewalkPavingTypeToComboBox _Label="その他の路面" _Value="OtherType" />
+        </x:Array>
+    </UserControl.Resources>
+    <Grid Height="450" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="260" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Base:LandXMLStdInformation
+            x:Name="sig"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <GroupBox
+            x:Name="c"
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Width="470"
+            Height="245"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Header="条件値の入力">
+            <Grid>
+                <StackPanel>
+                    <WrapPanel
+                        Width="450"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="190" Text="舗装の種類(車道)" />
+                        <ComboBox
+                            x:Name="cmbRoadPavingType"
+                            Width="200"
+                            Margin="50,0,0,0"
+                            DisplayMemberPath="_Label"
+                            ItemsSource="{StaticResource RoadPavingType}"
+                            SelectedValuePath="_Value" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Width="450"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="190" Text="舗装の種類(歩道等)" />
+                        <ComboBox
+                            x:Name="cmbSidewalkPavingType"
+                            Width="200"
+                            Margin="50,0,0,0"
+                            DisplayMemberPath="_Label"
+                            ItemsSource="{StaticResource SidewalkPavingType}"
+                            SelectedValuePath="_Value" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Width="450"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="190" Text="直線部の横断勾配" />
+                        <TextBlock Margin="50,0,0,0" Text="i=" />
+                        <TextBox
+                            x:Name="txtStraightLineTransverseGradient"
+                            Width="30"
+                            Margin="5,0,0,0"
+                            CommandManager.PreviewExecuted="txtStraightLineTransverseGradient_PreviewExecuted"
+                            LostFocus="txtStraightLineTransverseGradient_LostFocus"
+                            PreviewTextInput="txtStraightLineTransverseGradient_PreviewTextInput"
+                            Text="{Binding ElementName=sig, Path=sltg.Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                            TextChanged="txtStraightLineTransverseGradient_TextChanged" />
+                        <TextBlock Margin="5,0,0,0" Text="%" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Width="450"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="190" Text="バリアフリー重点整備地区への該当" />
+                        <RadioButton
+                            x:Name="rdbIsBarrierFreeTrue"
+                            Width="70"
+                            Margin="50,0,0,0"
+                            Content="該当"
+                            IsChecked="False" />
+                        <RadioButton
+                            x:Name="rdbIsBarrierFreeFalse"
+                            Width="70"
+                            Margin="10,0,0,0"
+                            Content="非該当"
+                            IsChecked="True" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Width="450"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="190" Text="高齢者、障害者等の通行が多いことが&#10;将来的に予想される箇所への該当" />
+                        <RadioButton
+                            x:Name="rdbIsManyTrafficTrue"
+                            Width="70"
+                            Margin="50,0,0,0"
+                            Content="該当"
+                            IsChecked="False" />
+                        <RadioButton
+                            x:Name="rdbIsManyTrafficFalse"
+                            Width="70"
+                            Margin="10,0,0,0"
+                            Content="非該当"
+                            IsChecked="True" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Width="450"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="190" Text="積雪寒冷の度がはなはだしい地域" />
+                        <RadioButton
+                            x:Name="rdbIsSnowyColdAreaTrue"
+                            Width="70"
+                            Margin="50,0,0,0"
+                            Content="該当"
+                            IsChecked="False" />
+                        <RadioButton
+                            x:Name="rdbIsSnowyColdAreaFalse"
+                            Width="70"
+                            Margin="10,0,0,0"
+                            Content="非該当"
+                            IsChecked="True" />
+                    </WrapPanel>
+                    <WrapPanel
+                        Width="450"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                        <TextBlock Width="190" Text="積雪寒冷地域のその他の地域" />
+                        <RadioButton
+                            x:Name="rdbIsSnowyColdOtherAreaTrue"
+                            Width="70"
+                            Margin="50,0,0,0"
+                            Content="該当"
+                            IsChecked="False" />
+                        <RadioButton
+                            x:Name="rdbIsSnowyColdOtherAreaFalse"
+                            Width="70"
+                            Margin="10,0,0,0"
+                            Content="非該当"
+                            IsChecked="True" />
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <ScrollViewer
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Height="108"
+            Margin="10,0,0,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            VerticalScrollBarVisibility="Auto">
+            <TextBlock
+                MinHeight="108"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Background="White"
+                Text="【照査概要】&#10;直線部の横断勾配が適切か確認します。&#10;車道の片勾配の値が適切か確認します。&#10;路肩の横断勾配が適切か確認します。&#10;歩道、自転車歩行者道・自転車道の横断勾配が適切か確認します。"
+                TextWrapping="Wrap" />
+        </ScrollViewer>
+    </Grid>
+</UserControl>
