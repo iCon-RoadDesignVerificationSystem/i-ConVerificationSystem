@@ -483,4 +483,10 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir lib
+move *.dll .\lib\
+move *.xml .\lib\
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
