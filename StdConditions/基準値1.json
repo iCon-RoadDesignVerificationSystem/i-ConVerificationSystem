@@ -214,9 +214,9 @@
           "-RoadSideStandard": "None",
           "-STDVal1": 3.5,
           "-SPCVal1": 3.75,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-STDVal2": 3.75,
+          "-STDVal3": [ 3.75 ],
+          "-SPCVal2": 3.75
         },
         {
           "-RoadType": 1,
@@ -224,9 +224,9 @@
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.5,
           "-SPCVal1": 3.75,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-STDVal2": 3.75,
+          "-STDVal3": [ 3.75 ],
+          "-SPCVal2": 3.75
         },
         {
           "-RoadType": 1,
@@ -234,49 +234,49 @@
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 3.5,
           "-SPCVal1": 3.25,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-STDVal2": 3.25,
+          "-STDVal3": [ 3.25 ],
+          "-SPCVal2": 3.25
         },
         {
           "-RoadType": 1,
           "-RoadClass": 3,
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.5,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.5,
+          "-STDVal2": 3.5,
+          "-STDVal3": [ 3.5 ],
+          "-SPCVal2": 3.5
         },
         {
           "-RoadType": 1,
           "-RoadClass": 3,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 3.25,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.25,
+          "-STDVal2": 3.25,
+          "-STDVal3": [ 3.25 ],
+          "-SPCVal2": 3.25
         },
         {
           "-RoadType": 1,
           "-RoadClass": 4,
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.25,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.25,
+          "-STDVal2": 3.25,
+          "-STDVal3": [ 3.25 ],
+          "-SPCVal2": 3.25
         },
         {
           "-RoadType": 1,
           "-RoadClass": 4,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 3.0,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.0,
+          "-STDVal2": 3.0,
+          "-STDVal3": [ 3.0 ],
+          "-SPCVal2": 3.0
         },
         {
           "-RoadType": 2,
@@ -284,9 +284,9 @@
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.5,
           "-SPCVal1": 3.25,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-STDVal2": 3.25,
+          "-STDVal3": [ 3.25 ],
+          "-SPCVal2": 3.25
         },
         {
           "-RoadType": 2,
@@ -294,29 +294,29 @@
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 3.25,
           "-SPCVal1": 3.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-STDVal2": 3.0,
+          "-STDVal3": [ 3.0 ],
+          "-SPCVal2": 3.0
         },
         {
           "-RoadType": 2,
           "-RoadClass": 2,
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.25,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.25,
+          "-STDVal2": 3.25,
+          "-STDVal3": [ 3.25 ],
+          "-SPCVal2": 3.25
         },
         {
           "-RoadType": 2,
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 3.0,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.0,
+          "-STDVal2": 3.0,
+          "-STDVal3": [ 3.0 ],
+          "-SPCVal2": 3.0
         },
         {
           "-RoadType": 3,
@@ -324,19 +324,19 @@
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.5,
           "-SPCVal1": 3.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [3.25, 3.0, 2.75],
-          "-SPCVal2": 0.0
+          "-STDVal2": 3.0,
+          "-STDVal3": [ 3.25, 3.0, 2.75 ],
+          "-SPCVal2": 2.75
         },
         {
           "-RoadType": 3,
           "-RoadClass": 1,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 3.0,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [2.5, 2.25],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.0,
+          "-STDVal2": 3.0,
+          "-STDVal3": [ 2.5, 2.25 ],
+          "-SPCVal2": 2.25
         },
         {
           "-RoadType": 3,
@@ -344,59 +344,59 @@
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.25,
           "-SPCVal1": 3.5,
-          "-STDVal2": 0.0,
-          "-STDVal3": [3.0, 2.75],
-          "-SPCVal2": 0.0
+          "-STDVal2": 3.5,
+          "-STDVal3": [ 3.0, 2.75 ],
+          "-SPCVal2": 2.75
         },
         {
           "-RoadType": 3,
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 2.75,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [2.5, 2.25],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 2.75,
+          "-STDVal2": 2.75,
+          "-STDVal3": [ 2.5, 2.25 ],
+          "-SPCVal2": 2.25
         },
         {
           "-RoadType": 3,
           "-RoadClass": 3,
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.0,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [3.25, 2.75],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.0,
+          "-STDVal2": 3.0,
+          "-STDVal3": [ 3.25, 2.75 ],
+          "-SPCVal2": 2.75
         },
         {
           "-RoadType": 3,
           "-RoadClass": 3,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 2.75,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [2.5, 2.25],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 2.75,
+          "-STDVal2": 2.75,
+          "-STDVal3": [ 2.5, 2.25 ],
+          "-SPCVal2": 2.25
         },
         {
           "-RoadType": 3,
           "-RoadClass": 4,
           "-RoadSideStandard": "None",
           "-STDVal1": 2.75,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [3.25, 3.0],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 2.75,
+          "-STDVal2": 2.75,
+          "-STDVal3": [ 3.25, 3.0 ],
+          "-SPCVal2": 3.0
         },
         {
           "-RoadType": 3,
           "-RoadClass": 5,
           "-RoadSideStandard": "None",
           "-STDVal1": 4.0,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [0.0],
-          "-SPCVal2": 0.0
+          "-SPCVal1": 3.0,
+          "-STDVal2": 3.0,
+          "-STDVal3": [ 3.0 ],
+          "-SPCVal2": 3.0
         },
         {
           "-RoadType": 4,
@@ -405,7 +405,7 @@
           "-STDVal1": 3.25,
           "-SPCVal1": 3.5,
           "-STDVal2": 3.0,
-          "-STDVal3": [2.75],
+          "-STDVal3": [ 2.75 ],
           "-SPCVal2": 2.5
         },
         {
@@ -413,9 +413,9 @@
           "-RoadClass": 1,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 2.75,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [2.5, 2.25],
+          "-SPCVal1": 2.75,
+          "-STDVal2": 2.75,
+          "-STDVal3": [ 2.5, 2.25 ],
           "-SPCVal2": 2.0
         },
         {
@@ -423,9 +423,9 @@
           "-RoadClass": 2,
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.0,
-          "-SPCVal1": 0.0,
+          "-SPCVal1": 3.0,
           "-STDVal2": 2.75,
-          "-STDVal3": [3.25],
+          "-STDVal3": [ 3.25 ],
           "-SPCVal2": 2.5
         },
         {
@@ -433,9 +433,9 @@
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 2.75,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [2.5, 2.25],
+          "-SPCVal1": 2.75,
+          "-STDVal2": 2.75,
+          "-STDVal3": [ 2.5, 2.25 ],
           "-SPCVal2": 2.0
         },
         {
@@ -443,9 +443,9 @@
           "-RoadClass": 3,
           "-RoadSideStandard": "NormalRoad",
           "-STDVal1": 3.0,
-          "-SPCVal1": 0.0,
+          "-SPCVal1": 3.0,
           "-STDVal2": 2.75,
-          "-STDVal3": [3.25],
+          "-STDVal3": [ 3.25 ],
           "-SPCVal2": 2.5
         },
         {
@@ -453,10 +453,20 @@
           "-RoadClass": 3,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal1": 2.75,
-          "-SPCVal1": 0.0,
-          "-STDVal2": 0.0,
-          "-STDVal3": [2.5, 2.25],
+          "-SPCVal1": 2.75,
+          "-STDVal2": 2.75,
+          "-STDVal3": [ 2.5, 2.25 ],
           "-SPCVal2": 2.0
+        },
+        {
+          "-RoadType": 4,
+          "-RoadClass": 4,
+          "-RoadSideStandard": "None",
+          "-STDVal1": 4.0,
+          "-SPCVal1": 3.0,
+          "-STDVal2": 3.0,
+          "-STDVal3": [ 3.0 ],
+          "-SPCVal2": 3.0
         }
       ],
       "CenterMarginalWidth": [
@@ -669,22 +679,22 @@
           "-RoadClass": 1,
           "-RoadSideStandard": "NormalRoad",
           "-STDValL": 1.25,
-          "-SPCValL": 0.0,
+          "-SPCValL": 1.25,
           "-DESValL": 1.75,
           "-STDValR": 0.75,
           "-DESValR": 1.0,
-          "-TUNVal": 0.0
+          "-TUNVal": 0.75
         },
         {
           "-RoadType": 2,
           "-RoadClass": 2,
           "-RoadSideStandard": "NormalRoad",
           "-STDValL": 1.25,
-          "-SPCValL": 0.0,
+          "-SPCValL": 1.25,
           "-DESValL": 1.75,
           "-STDValR": 0.75,
           "-DESValR": 0.75,
-          "-TUNVal": 0.0
+          "-TUNVal": 0.75
         },
         {
           "-RoadType": 3,
@@ -735,7 +745,7 @@
           "-RoadClass": 5,
           "-RoadSideStandard": "NormalRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
+          "-SPCValL": 0.5,
           "-DESValL": 0.5,
           "-STDValR": 0.5,
           "-DESValR": 0.5,
@@ -746,7 +756,7 @@
           "-RoadClass": 1,
           "-RoadSideStandard": "NormalRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
+          "-SPCValL": 0.5,
           "-DESValL": 0.5,
           "-STDValR": 0.5,
           "-DESValR": 0.5,
@@ -757,7 +767,7 @@
           "-RoadClass": 2,
           "-RoadSideStandard": "NormalRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
+          "-SPCValL": 0.5,
           "-DESValL": 0.5,
           "-STDValR": 0.5,
           "-DESValR": 0.5,
@@ -768,7 +778,7 @@
           "-RoadClass": 3,
           "-RoadSideStandard": "NormalRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
+          "-SPCValL": 0.5,
           "-DESValL": 0.5,
           "-STDValR": 0.5,
           "-DESValR": 0.5,
@@ -779,10 +789,10 @@
           "-RoadClass": 1,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 1.25,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 1.25,
+          "-DESValL": 1.25,
           "-STDValR": 0.75,
-          "-DESValR": 0.0,
+          "-DESValR": 0.75,
           "-TUNVal": 1.0
         },
         {
@@ -790,10 +800,10 @@
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 1.25,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 1.25,
+          "-DESValL": 1.25,
           "-STDValR": 0.75,
-          "-DESValR": 0.0,
+          "-DESValR": 0.75,
           "-TUNVal": 1.0
         },
         {
@@ -801,10 +811,10 @@
           "-RoadClass": 3,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 1.0,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 1.0,
+          "-DESValL": 1.0,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
+          "-DESValR": 0.5,
           "-TUNVal": 0.75
         },
         {
@@ -812,10 +822,10 @@
           "-RoadClass": 4,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 1.0,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 1.0,
+          "-DESValL": 1.0,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
+          "-DESValR": 0.5,
           "-TUNVal": 0.75
         },
         {
@@ -823,21 +833,21 @@
           "-RoadClass": 0,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 1.0,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 1.0,
+          "-DESValL": 1.0,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
-          "-TUNVal": 0.0
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
         },
         {
           "-RoadType": 3,
           "-RoadClass": 1,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 0.75,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 0.75,
+          "-DESValL": 0.75,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
+          "-DESValR": 0.5,
           "-TUNVal": 0.5
         },
         {
@@ -845,77 +855,77 @@
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.5,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
-          "-TUNVal": 0.0
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
         },
         {
           "-RoadType": 3,
           "-RoadClass": 3,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.5,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
-          "-TUNVal": 0.0
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
         },
         {
           "-RoadType": 3,
           "-RoadClass": 4,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.5,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
-          "-TUNVal": 0.0
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
         },
         {
           "-RoadType": 3,
           "-RoadClass": 5,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.5,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
-          "-TUNVal": 0.0
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
         },
         {
           "-RoadType": 4,
           "-RoadClass": 1,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.5,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
-          "-TUNVal": 0.0
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
         },
         {
           "-RoadType": 4,
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.5,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
-          "-TUNVal": 0.0
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
         },
         {
           "-RoadType": 4,
           "-RoadClass": 3,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 0.5,
-          "-SPCValL": 0.0,
-          "-DESValL": 0.0,
+          "-SPCValL": 0.5,
+          "-DESValL": 0.5,
           "-STDValR": 0.5,
-          "-DESValR": 0.0,
-          "-TUNVal": 0.0
+          "-DESValR": 0.5,
+          "-TUNVal": 0.5
         }
       ],
       "RoadShoulderS1Width": [
@@ -948,7 +958,7 @@
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 1.25,
-          "-SPCValL": 0.0,
+          "-SPCValL": 1.25,
           "-STDValR": 0.75
         },
         {
@@ -956,7 +966,7 @@
           "-RoadClass": 3,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 1.25,
-          "-SPCValL": 0.0,
+          "-SPCValL": 1.25,
           "-STDValR": 0.5
         },
         {
@@ -964,7 +974,7 @@
           "-RoadClass": 4,
           "-RoadSideStandard": "SmallRoad",
           "-STDValL": 1.25,
-          "-SPCValL": 0.0,
+          "-SPCValL": 1.25,
           "-STDValR": 0.5
         }
       ],
@@ -974,42 +984,42 @@
           "-RoadClass": 1,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal": 0.25,
-          "-SPCVal": 0.0
+          "-SPCVal": 0.25
         },
         {
           "-RoadType": 1,
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal": 0.25,
-          "-SPCVal": 0.0
+          "-SPCVal": 0.25
         },
         {
           "-RoadType": 1,
           "-RoadClass": 3,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal": 0.25,
-          "-SPCVal": 0.0
+          "-SPCVal": 0.25
         },
         {
           "-RoadType": 1,
           "-RoadClass": 4,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal": 0.25,
-          "-SPCVal": 0.0
+          "-SPCVal": 0.25
         },
         {
           "-RoadType": 2,
           "-RoadClass": 1,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal": 0.25,
-          "-SPCVal": 0.0
+          "-SPCVal": 0.25
         },
         {
           "-RoadType": 2,
           "-RoadClass": 2,
           "-RoadSideStandard": "SmallRoad",
           "-STDVal": 0.25,
-          "-SPCVal": 0.0
+          "-SPCVal": 0.25
         },
         {
           "-RoadType": 1,
@@ -1044,14 +1054,14 @@
           "-RoadClass": 1,
           "-RoadSideStandard": "NormalRoad",
           "-STDVal": 0.5,
-          "-SPCVal": 0.0
+          "-SPCVal": 0.5
         },
         {
           "-RoadType": 2,
           "-RoadClass": 2,
           "-RoadSideStandard": "NormalRoad",
           "-STDVal": 0.5,
-          "-SPCVal": 0.0
+          "-SPCVal": 0.5
         }
       ]
     },
