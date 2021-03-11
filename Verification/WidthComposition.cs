@@ -1038,7 +1038,7 @@ namespace i_ConVerificationSystem.Verification
                     case Name_JItems.RoadshoulderR:
                         //路肩
                         //右側路肩
-                        CheckForRoadShoulderWidth(wcip, cs, sameGroup.ToList(), cPoint);
+                        CheckForRoadShoulderWidth(wcip, cs, sameGroup.ToList(), cPoint, cGroup);
                         break;
                     case Name_JItems.MarginalStrip:
                         //路肩側帯
@@ -1481,8 +1481,8 @@ namespace i_ConVerificationSystem.Verification
 
                     break;
                 case CenterLineCheckItem.Separator:
-                    stdVal = cmStd.STDVal;
-                    spcVal = cmStd.SPCVal == 0 ? cmStd.STDVal : cmStd.SPCVal;
+                    stdVal = csStd.STDVal;
+                    spcVal = csStd.SPCVal == 0 ? csStd.STDVal : csStd.SPCVal;
 
                     cWidth = (from T in cs.dcssList
                               where (T.name_J == Name_JItems.CenterSprit || T.group1Name == Name_JItems.CenterSprit || T.group2Name == Name_JItems.CenterSprit) && T.isTarget
@@ -1534,22 +1534,49 @@ namespace i_ConVerificationSystem.Verification
         /// <param name="cs"></param>
         /// <param name="dDcss"></param>
         private void CheckForRoadShoulderWidth(WCInputParams wcip, CrossSect_OGExtension cs, 
-                                               List<DesignCrossSectSurf_OGExtension> dcssList, WidthVerifyCheckPoint cPoint)
+                                               List<DesignCrossSectSurf_OGExtension> dcssList, WidthVerifyCheckPoint cPoint, Name_JItems cGroup)
         {
             var retVal = new VerificationResult();
 
-            var lRoadShoulderGroup = (from T in dcssList
+            var lRoadShoulderGroup = new List<DesignCrossSectSurf_OGExtension>();
+            var rRoadShoulderGroup = new List<DesignCrossSectSurf_OGExtension>();
+
+            if (cGroup == Name_JItems.Roadshoulder)
+            {
+                //路肩用判定
+                lRoadShoulderGroup = (from T in dcssList
                                       where T.name_J == Name_JItems.Roadshoulder ||
                                             (T.group1Name == Name_JItems.Roadshoulder && T.group1 != GroupCode.None) ||
                                             (T.group2Name == Name_JItems.Roadshoulder && T.group2 != GroupCode.None)
                                       select T).ToList();
-            var lResult = this.GetRoadShoulderWidthResult(wcip, cs, lRoadShoulderGroup, false);
-            var rRoadShoulderGroup = (from T in dcssList
+                //逆サイドの右側路肩を取る
+                rRoadShoulderGroup = (from T in cs.dcssList
+                                      where T.name_J == Name_JItems.RoadshoulderR ||
+                                            (T.group1Name == Name_JItems.RoadshoulderR && T.group1 != GroupCode.None) ||
+                                            (T.group2Name == Name_JItems.RoadshoulderR && T.group2 != GroupCode.None) &&
+                                            T.isTarget &&
+                                            T.side != dcssList.First().side
+                                      select T).ToList();
+            }
+            else 
+            {
+                //右側路肩用判定
+                lRoadShoulderGroup = (from T in cs.dcssList
+                                      where T.name_J == Name_JItems.Roadshoulder ||
+                                            (T.group1Name == Name_JItems.Roadshoulder && T.group1 != GroupCode.None) ||
+                                            (T.group2Name == Name_JItems.Roadshoulder && T.group2 != GroupCode.None) &&
+                                            T.isTarget &&
+                                            T.side != dcssList.First().side
+                                      select T).ToList();
+                //逆サイドの右側路肩を取る
+                rRoadShoulderGroup = (from T in dcssList
                                       where T.name_J == Name_JItems.RoadshoulderR ||
                                             (T.group1Name == Name_JItems.RoadshoulderR && T.group1 != GroupCode.None) ||
                                             (T.group2Name == Name_JItems.RoadshoulderR && T.group2 != GroupCode.None)
                                       select T).ToList();
-            var rResult = this.GetRoadShoulderWidthResult(wcip, cs, rRoadShoulderGroup, true);
+            }
+            var lResult = GetRoadShoulderWidthResult(wcip, cs, lRoadShoulderGroup, false);
+            var rResult = GetRoadShoulderWidthResult(wcip, cs, rRoadShoulderGroup, true, lResult);
 
             foreach (var item in lRoadShoulderGroup)
             {
@@ -1718,7 +1745,7 @@ namespace i_ConVerificationSystem.Verification
         /// <returns></returns>
         private RoadShoulderWidthResult GetRoadShoulderWidthResult(WCInputParams wcip, CrossSect_OGExtension cs, 
                                                                    List<DesignCrossSectSurf_OGExtension> dcssList,
-                                                                   bool isRightSide)
+                                                                   bool isRightSide, RoadShoulderWidthResult lResult = RoadShoulderWidthResult.NG)
         {
             var rsWidth = dcssList.Select(row => row.cspList.First()).Sum(row => row.roadWidth);
 
@@ -1754,16 +1781,26 @@ namespace i_ConVerificationSystem.Verification
 
                 if (isRightSide)
                 {
-                    if (v.DESValR <= rsWidth) return RoadShoulderWidthResult.DesireR;
-                    if (v.STDValR <= rsWidth) return RoadShoulderWidthResult.StandardR;
-                    if (v.TUNVal <= rsWidth) return RoadShoulderWidthResult.Tunnel;
+                    if (lResult == RoadShoulderWidthResult.Tunnel && v.STDValR == v.TUNVal)
+                    {
+                        //路肩照査結果がトンネル基準値であり右側基準値とトンネル基準値が同じであるとき、先にトンネル基準値であるか判定する
+                        if (v.DESValR <= rsWidth) return RoadShoulderWidthResult.DesireR;
+                        if (v.TUNVal <= rsWidth) return RoadShoulderWidthResult.Tunnel;
+                        if (v.STDValR <= rsWidth) return RoadShoulderWidthResult.StandardR;
+                    }
+                    else
+                    {
+                        if (v.DESValR <= rsWidth) return RoadShoulderWidthResult.DesireR;
+                        if (v.STDValR <= rsWidth) return RoadShoulderWidthResult.StandardR;
+                        if (v.TUNVal <= rsWidth) return RoadShoulderWidthResult.Tunnel;
+                    }
                 }
                 else
                 {
                     if (v.DESValL <= rsWidth) return RoadShoulderWidthResult.DesireL;
                     if (v.STDValL <= rsWidth) return RoadShoulderWidthResult.StandardL;
-                    if (v.TUNVal <= rsWidth) return RoadShoulderWidthResult.Tunnel;
                     if (v.SPCValL <= rsWidth) return RoadShoulderWidthResult.SpecialL;
+                    if (v.TUNVal <= rsWidth) return RoadShoulderWidthResult.Tunnel;
                 }
             }
 
