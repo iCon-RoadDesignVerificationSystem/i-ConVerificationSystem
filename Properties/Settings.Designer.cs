@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace i_ConVerificationSystem_WPFApp.Properties
+namespace i_ConVerificationSystem.Properties
 {
 
 
