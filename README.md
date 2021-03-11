@@ -61,9 +61,11 @@
 # Contribute
 本システムは**プロトタイプ**であるため、不便な機能やバグが存在する可能性があります。  
 それらを見つけた場合はIssueにてお知らせください。  
-i-ConVerificationSystemの開発に貢献いただけるのであれば、Forkしプログラムを修正し、pull-requestを送ってください。  
+また、i-ConVerificationSystemの開発に貢献いただけるのであれば、Forkしプログラムを修正し、pull-requestを送っていただけると幸いです。
+上記については、商用利用を目的としたシステム開発に対し、pull-requestを強要するものではありません。  
 This program is **PROTOTYPE** so you are likely to be confronted with features and bugs that are inconvenient for you, if you found that please inform by issue.
 If you could to contribute to i-ConVerificationSystem, first of all Fork it, modify the program, and send a pull-request.  
+The above does not imply that pull-requests are mandatory for system development for commercial use.
 
 # License
 - [MIT Lisence](LICENSE)
